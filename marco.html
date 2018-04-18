@@ -5,6 +5,20 @@
     <title> Sito di Marco </title>
   </head>
     <body>
+      <a href="#one_piece"> Ciurma </a> <!--tag a con attributo href per fare collegamenti ipertestuali
+                                          # -> si usa per le ancore dentro alla stessa pagina
+                                          dentro agli ID non usare spazi e tutto minuscolo-->
+      <a href="alessandro_bloodis.html" target="_blank"
+         title="Sito di Ale"> Ale </a>
+      <a href="dayana.html" target="_blank"
+         title="Sito di Dayana"> Dayana </a>
+      <a href="matteo_autelitano.html" target="_blank"
+         title="Sito di Matteo"> Matteo </a>
+      <a href="patrick.html" target="_blank"
+         title="Sito di Patrick"> Patrick </a>
+      <a href="piermarco90.html" target="_blank"
+        title="Sito di Piermarco"> Piermarco </a>
+
       <h1> Questa è una intestazione 1</h1>   <!--h1,2,3... cambia la grandezza del font -->
       <h2> Questa è una intestazione 2</h2>
       <h3> Questa è una intestazione 3</h3>
@@ -13,7 +27,7 @@
       <h6> Questa è una intestazione 6</h6>
 
       <p> Questo &egrave; un paragrafo</p> <!-- per fare la e accentata posso usare il tag nell'head oppure
-                                              usare questo codice &egrave -->
+                                            usare questo codice &egrave -->
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -24,12 +38,18 @@
         sint occaecat cupidatat non proident, sunt in culpa qui
         officia deserunt mollit anim id est laborum.</p>
 
-      <img src="https://bit.ly/2EVg12R" height="300" width="400"
-           alt="questo è una immagine con source assoluto"/> <!-- attributi source e alternative: alternative serve per descrivere l'immagine se
-                                                              questa è danneggiata oppure non si vede in quel determinato browser -->
+      <a href="https://www.opgt.it/" target="_blank" title="Sito One Piece">
+         <img src="https://bit.ly/2EVg12R" height="300" width="400"
+           alt="questa è un'immagine con source assoluto"/> </a> <!-- attributi source e alternative: alternative serve per descrivere l'immagine se
+                                                                  questa è danneggiata oppure non si vede in quel determinato browser -->
       <img src="img/one-piece-jp.jpg" height="300" width="400"
-           alt="questo è una immagine con source relativo"/> <!-- attributo source può essere relativo o assoluto :
-                                                              assoluto se il percorso del file inizia con un protocollo http oppure https
-                                                              relativo se il percorso del file arriva dalla cartella tipicamente img del progetto -->
+           alt="questa è un'immagine con source relativo"
+           id="one_piece" />                                  <!-- attributo source può essere relativo o assoluto :
+                                                                assoluto se il percorso del file inizia con un protocollo http oppure https
+                                                                relativo se il percorso del file arriva dalla cartella tipicamente img del progetto -->
+
+      <a href="http://www.gazzetta.it/" target="_blank"
+         title="Sito Gazzetta dello Sport" > Gazzetta dello Sport </a>
+
     </body>
 </html>
