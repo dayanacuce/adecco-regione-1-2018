@@ -23,17 +23,82 @@
     a:hover{
       color:#111693;
     }
+
+    .bordino {
+      border:1px solid: #FF0000;
+    }
+
+    .container {
+      border:1px dashed: #navy;
+      height: 500 px;
+    }
+    .header{
+      height: 100 px;
+      min-height: 500;
+      overflow: auto;
+
+    }
+    .parts{
+      background: #dedede;
+      display: block;
+      width: 34%;
+      height: 300px;
+      float: left;
+      text-align: center;
+      padding: 5%;
+      margin: 3%
+    }
+
     </style>
-    <!--Quando scriviamo dentro style scriviamo in css. Meglio scriverlo dentro
-  il head
-  DOMANDE:
+    <!--
+    Quando scriviamo dentro style scriviamo in css. Meglio scriverlo dentro
+  il head.
+
+    Per calcolare la grandezza di un DIV quindi inserire la  la larghezza
+    con width bisogna tenere presente che c'è il padding (spaziatura
+     interna dal bordo) ed il margin (spaziatura interna dal bordo un margine) -->
+
+    <!--
+    I div di defalut sono uno sotto l'altro
+    float: left; attenzione perchè non calcola il contenuto del div e non gli
+    visualizza per ovviare su usa overflow: auto;
+    vertical aling solo per testo.
+    min-height: 500; il minino spazio
+    overflow: auto;-->
+
+    <!--DOMANDE:
   1.fontsize 2m??
-  2.non ho capito bene la cascata tra due font inseriti nello style -->
+  2.non ho capito bene la cascata tra due font inseriti nello style
+3. overflow-->
   </head>
 
 
 eccolo il due
   <body>
+
+
+    <div class="container">
+    <div class "header">
+
+   </div>
+
+    <div class="parts bordino">
+      ciao
+    </div>
+    <div class="parts bordino">
+      ciao
+    </div>
+
+    <div>
+      ciao
+    </div>
+
+    <div>
+      ciao
+    </div>
+    <div>
+      ciao
+    </div>
     <a href="#fiume_amazzonia" > Rio Amazonas </a>
     <!-- Ancora da dichiarare dentro il Body, simette il nome che vogliamo
         visualizzare nella barretta in alto "#nome", ricordare
