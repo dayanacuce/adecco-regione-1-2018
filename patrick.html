@@ -10,6 +10,14 @@
      - absolute starts with a protocol:
        - HTTP://
        - HTTPS://
+     - <a: anchor tribute to link:
+       - href: link
+       - #anchor links to something inside the HTML
+       - ($PATH)/to/file like pdf, img.
+       - absolute path: HTTPS://, MAILTO://, TEL://
+       - title="Go to!"
+       - target="_BLANK" opens the link in new page
+       > Smt to link </a>
 -->
 
 <html>
@@ -18,6 +26,13 @@
     <title>Patrick's page</title>
   </head>
   <body>
+    <a href="#kratos" target="_blank">God of War</a>
+    <a href="alessandro_bloodis.html" target="_blank">alessandro_bloodis</a>
+    <a href="dayana.html" target="_blank">dayana</a>
+    <a href="marco.html" target="_blank">marco</a>
+    <a href="matteo_autelitano.html" target="_blank">matteo_auteliano</a>
+    <a href="piermarco90.html" target="_blank">piermarco90</a>
+
     <h1>デスノート</h1>
     <h2>This is heading 2.</h2>
     <h3>This is heading 3.</h3>
@@ -35,9 +50,12 @@
     </p>
 
     <img src="https://bit.ly/2HcC1YH"
-         alt="This is an image with absolute path." />
-    <img src="img\god-of-war-narrative-screen-08-ps4-eu-23jan18.jpg"
-         alt="This is an image with relative path."
-         style="width:920px;height:780px"; />
+         alt="This is an image with absolute path."
+         id="kratos" />
+    <a href="https://godofwar.playstation.com/" target="_blank">
+      <img src="img\god-of-war-narrative-screen-08-ps4-eu-23jan18.jpg"
+           alt="This is an image with relative path."
+           title="vai al sito ufficiale"/>
+    </a>
   </body>
 </html>
