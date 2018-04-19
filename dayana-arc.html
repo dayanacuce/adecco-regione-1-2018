@@ -5,64 +5,52 @@
   <meta chartset ="utf-8"/>
   <meta http-equiv ="X-UA-Compatible" content ="IE=edge"/>
   <meta name = "viewport" content= "width=device-width, initial-scale=1"/>
-  
+
   <title>Prima architettura dy </title>
   <!--
   script src source va a prendere la sorgente bootstrap e jqueri
+  overflow= serve
+  flow= se inseriamo un'altezza tanto testo che va fuori lo regola automaticamente
+  ed inserisce una barra scorrimento
+  //se non hai impostato un altezza serve per far riconoscere al browser,
+   mettendo il div uno accanto alla'ltro con float letf il
+   conteiners non riesce a capire il contenuto e sfasa la pag così si
+   autoregola l'latezza automaticamente
+   ///////
+   flow: mettere i div uno accanto all'altro
    -->
     <style>
-
+    /*oer inserire commento su style*/
     header {
-    background:white;
-    font-size: 60px;
-    font-family: verdana;
-    color: black;
-    text-align: center;
-
+        background: #cfcfcf;
+        overflow: auto;
+        text-align: center;
+        color: white;
     }
 
     main {
-      height: 500 px;
-      width: 100%;
+        overflow: auto;
     }
 
     nav{
-      background: coral;
-      font-size: 15px;
-      display: block;
-      text-align: center;
-      float: left;
 
-      height: 500 px;
-
-      width: 15%;
-      padding: 10%;
-      margin: 1%, 1%, 1%, 1%
+      width: 14%;
+      margin:0,3%;
+      height: 100%;
 
     }
 
-    section{
-        background: pink;
-        font-size: 15px;
-        display: block;
-        float: left;
+    #content{
 
-        height: 500px;
-        width: 15%;
-        padding: 10%;
-        margin: 1%
+        width: 54;
+        margin: 0.3%;
+        height: 85%;
     }
 
     aside{
-        background:coral;
-        font-size: 15px;
-        display: block;
-        float: left;
-
-        height: 500px;
-        width: 15%;
-        padding: 10%;
-        margin: 1%
+        width: 10%;
+        margin: 5%;
+        height: 90%;
     }
 
     footer {
@@ -80,7 +68,7 @@
 
   <body>
   <header>
-  Architettura Sito Prova
+  <h1> Architettura Sito Prova </h1>
   </header>
 
 
@@ -95,7 +83,7 @@
         </ul>
       </nav>
 
-      <section>
+      <section id= "content">
         SECTION Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -119,7 +107,10 @@
      ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
       consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
   <footer>
-
+    <script>
+    console.log ("Buenas!");
+    alert ("Yeah")
+    </script>
   </body>
 
 </html>
