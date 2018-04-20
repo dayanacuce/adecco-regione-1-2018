@@ -2,6 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>marco_responsive</title>
     <style>
       header {
@@ -57,7 +59,13 @@
       padding: 0%;
       margin: 2% 0% 2% 0%;
     }
-
+    @media screen and (max-width: 800px) {
+      header, nav, section, aside {
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
     </style>
   </head>
   <body>

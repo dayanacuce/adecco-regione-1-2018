@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name=
+    <style>
+    div {
+      dysplay: block;
+    }
+    </style>
+  </head>
+  <body>
+  <header>
+      titolo
+  </header>
+  <main>
+      <section>
+      </section>
+      <aside>
+      </aside>
+  </main>
+  <footer>X</footer>
+  </body>
+</html>
