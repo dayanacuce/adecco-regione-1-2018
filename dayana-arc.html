@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <title>Prima architettura dy </title>
+  <!--
+  script src source va a prendere la sorgente bootstrap e jqueri
+  overflow= serve
+  flow= se inseriamo un'altezza tanto testo che va fuori lo regola automaticamente
+  ed inserisce una barra scorrimento
+  //se non hai impostato un altezza serve per far riconoscere al browser,
+   mettendo il div uno accanto alla'ltro con float letf il
+   conteiners non riesce a capire il contenuto e sfasa la pag così si
+   autoregola l'latezza automaticamente
+   ///////
+   flow: mettere i div uno accanto all'altro
+   -->
+    <style>
+    /*oer inserire commento su style*/
+    header {
+        background: #cfcfcf;
+        overflow: auto;
+        text-align: center;
+        color: white;
+    }
+
+    main {
+        overflow: auto;
+    }
+
+    nav{
+
+      width: 30%;
+      margin:3%;
+      float: left;
+      background:lightpink;
+
+
+    }
+
+    #content{
+
+        width: 30%;
+        margin: 3%;
+        float: left;
+        background:pink;
+
+
+
+    }
+
+    aside{
+        width: 30%;
+        margin: 3%;
+        float: left;
+        background:lightpink;
+
+    }
+
+    footer {
+      font-size: 10px;
+      font-family: verdana;
+      color: lightgrey;
+      text-align: left;
+      background:palevioletred;
+
+    }
+
+    </style>
+  </head>
+
+
+  <body>
+  <header>
+  <h1> Architettura Sito Prova </h1>
+  </header>
+
+
+
+    <main>
+
+      <nav>
+        <ul>
+          <li> Albero</li>
+          <li> Pianta</li>
+          <li> Radice</li>
+          <li> Foglia</li>
+        </ul>
+      </nav>
+
+      <section id= "content">
+        SECTION Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+           velit esse cillum dolore eu fugiat nulla pariatur.
+      </section>
+
+      <aside>
+        ASIDE <strong>Lorem</strong> ipsum <em>dolor</em> <del>sit</del>
+          <i>amet</i>, <b>consectetur</b> <span>adipisicing</span> elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          <strong><del><em>ad minim veniam, quis nostrud exercitation ullamco
+          laboris nisi ut aliquip</strong></del></em>
+      </aside>
+  </main>
+
+  <footer>
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+    doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+     veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim
+     ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+      consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+  <footer>
+    <script>
+    console.log ("Buenas!");
+    alert ("Yeah")
+    </script>
+  </body>
+
+</html>

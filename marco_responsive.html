@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- per fare diventare il sito responsive -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      header{
+        background: #D0D0D0;
+        overflow: auto;
+        text-align: center;
+        color: white;
+      }
+      main{
+        overflow: auto;
+      }
+      nav{
+        background: #D0D0D0;
+        width: 14%;
+        margin: 3%;
+          float: left;
+      }
+      #content{
+        width: 54%;
+        margin: 3%;
+          float: left;
+      }
+      aside{
+        background: #D0D0D0;
+        width: 10%;
+        margin: 3%;
+        height: 50%;
+          float: left;
+      }
+      footer{
+        background: #D0D0D0;
+      }
+      @media screen and (max-width: 800px) {
+        nav, #content, aside {
+          width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- intestazione -->
+      <h1><i class="fa fa-chess"></i>Titolo</h1>
+    </header>
+    <main>
+      <!-- il contenitore -->
+      <nav class="defaults">
+        <!-- navigazione -->
+        <ul>
+          <li>
+            link
+          </li>
+          <li>
+            link
+          </li>
+          <li>
+            link
+          </li>
+          <li>
+            link
+          </li>
+          <li>
+            link
+          </li>
+          <li>
+            link
+          </li>
+          <li>
+            link
+          </li>
+        </ul>
+      </nav>
+      <section id="content" class="defaults">
+        <!-- contenuto principale -->
+        <div>
+          contenuto
+        </div>
+      </section>
+      <aside class="defaults">
+        <!-- contenuto secondario -->
+        aside
+      </aside>
+    </main>
+    <footer>
+      <!-- il piè di pagina -->
+      Yeah &reg;
+    </footer>
+    <script>
+      //console.log("Hello World!");
+    </script>
+  </body>
+</html>
