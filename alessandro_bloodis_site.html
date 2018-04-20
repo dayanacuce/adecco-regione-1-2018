@@ -2,20 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <style>
-      .main{
+      main{
         text-align: center;
         height: 800px;
         width: 100%;
       }
-      .header{
+      header{
         height: auto;
         width: 100%;
         background: #40603e;
         border: 1px solid #1e2d1d;
       }
-      .footer{
+      footer{
         height: 5%;
         width: 100%;
         background: #40603e;
@@ -23,17 +28,16 @@
         float: left;
       }
 
-      .boardernav{
+      #boardernav{
         width: 20%;
         height: 700px;
         background: #1e2d1d;
         float: left;
         padding: 0.3%;
-        overflow: auto;
         margin: 1%
 
       }
-      .boardersection{
+      #boardersection{
         width: 52%;
         height: 700px;
         background: #1e2d1d;
@@ -42,7 +46,7 @@
         overflow: auto;
         margin: 1%
       }
-      .boarderaside{
+      #boarderaside{
         width: 20%;
         height: 700px;
         background: #1e2d1d;
@@ -51,48 +55,56 @@
         margin: 1%;
         overflow:auto;
       }
-      .nav{
+      nav{
         height: 100%;
         width: 100%;
         background: #40603e;
         float: left;
         text-align: center;
       }
-      .section{
+      section{
         height: 100%;
         width: 100%;
         text-align: center;
         background: #40603e;
         float: left;
       }
-      .aside{
-        height: auto;
+      aside{
+        height: 100%;
         width: 100%;
         background: #40603e;
         float: left;
         text-align: center;
         min-height: 100%;
+        overflow: auto;
+      }
+      @media screen and (max-width: 800px) {
+        #boardernav, #boardersection, #boarderaside {
+          width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+          margin-left: 0;
+          margin-right: 0;
+        }
       }
       </style>
   </head>
   <body>
     <main>
-        <div class="header">
+        <header>
           <h1>ciao</h1>
-      </div>
-      <div class="boardernav">
-        <div class="nav">
-          <ul>                                                                      <!-- unordered list-->
-            <li>a</li>
-            <li>a</li>
-            <li>a</li>
-            <li>a</li>
-            <li>a</li>
-          </ul>
-        </div>
-      </div>
-      <div class="boardersection">
-        <div class="section">
+      </header>
+        <boardernav id="boardernav">
+          <nav>
+            <ul>                                                                      <!-- unordered list-->
+              <li>a</li>
+              <li>a</li>
+              <li>a</li>
+              <li>a</li>
+              <li>a</li>
+            </ul>
+          </nav>
+        </boardernav>
+      <boardersection id="boardersection">
+        <section>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -123,10 +135,10 @@
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation
             ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </div>
-      </div>
-      <div class="boarderaside">
-        <div class="aside">
+        </section>
+      </boardersection>
+      <boarderaside id="boarderaside">
+        <aside>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
             sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -157,10 +169,10 @@
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation
             ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
-        </div>
-      </div>
+        </aside>
+      </boarderaside>
     </main>
-      <footer class="footer">
+      <footer>
         <h2>ciao fondo</h2>
       </footer>
   </body>
