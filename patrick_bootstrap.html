@@ -13,14 +13,16 @@
       .bg-color {
         background: #CACACA;
       }
-      .floating {
+      .float {
         float: left;
       }
       section {
         overflow: auto;
         background: #F0F0F0;
         height: 500px;
-        text-align: justify;
+      }
+      #list {
+        height: 500px;
       }
     </style>
   </head>
@@ -31,7 +33,7 @@
       </header>
       <main class="row">
         <nav class="col-md-3">
-          <div class="bg-color">
+          <div class="bg-color" id="list">
             <ul>
               <li>Item 1</li>
               <li>Item 2</li>
@@ -42,8 +44,8 @@
             </ul>
           </div>
         </nav>
-          <section class="col-md-5" class="floating">
-            <div class="bg-color" class="col-md-4">
+          <section class="col-md-9">
+            <div class="bg-color" class="col-md-6" class="float">
               <p>
                 <strong>Lorem</strong> ipsum <em>dolor</em> sit <del>amet</del>,
                  consectetur adipisicing elit,
