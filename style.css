@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+#container
+{ width: 1000px;
+  height:auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#header
+{ background-color: #FF0033;
+  text-align: center;
+  height: 100px;
+  width: 1000px;
+  float: left;
+}
+
+#parteCentraleAsinistra
+{background-color: #666600;
+    text-align: left;
+    height: 300px;
+    width: 200px;
+    float: left;
+}
+
+#parteCentraleAdestra
+{background-color: #330099;
+    text-align: left;
+    height: 300px;
+    width: 200px;
+    float: left;
+}
