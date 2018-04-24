@@ -66,17 +66,17 @@
                         <h1 class="page-header">Contact form</h1>
                     </div>
                     <form action="http://adecco.local/sendmail.php" method="post">
-                      <div class="form-group">
-                        <label>First Name</label>
-                        <input class="form-control" name="firstname" value="">
+                      <div class="form-group" id="nameId">
+                        <label class="control-label" for="firstname">First Name</label>
+                        <input class="form-control" name="firstname" id="firstname">
                       </div>
-                      <div class="form-group">
+                      <div class="form-group" id="lastId">
                         <label>Last Name</label>
-                        <input class="form-control" name="lastname" value="">
+                        <input class="form-control" name="lastname" value="" id="lastname">
                       </div>
-                      <div class="form-group">
+                      <div class="form-group" id="emailId">
                         <label>Email</label>
-                        <input class="form-control" name="email" value="">
+                        <input class="form-control" name="email" value="" id="email">
                       </div>
                       <div class="form-group">
                         <label>Sex</label>
@@ -107,13 +107,13 @@
                         <label>Terms</label>
                         <div class="checkbox">
                           <label>
-                            <input type="checkbox" value>
+                            <input type="checkbox" id="privacy">
                             Accept Terms and conditions
                           </label>
                         </div>
                       </div>
                       <div class="form-group">
-                        <button type="submit" class="btn btn-default">Submit Button</button>
+                        <button type="submit" id="submitBtn"class="btn btn-default" disabled>Submit Button</button>
                         <button type="submit" class="btn btn-default">Reset</button>
                       </div>
                   </form>
@@ -139,6 +139,31 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+
+    <script>
+      $("#privacy").on("change", function(resp) {
+        if (this.checked) {
+          $("#submitBtn").attr('disabled', null)
+        } else {
+          $("#submitBtn").attr('disabled', "disabled")
+        }
+      })
+
+      $("form").on("submit", function(e) {
+        e.preventDefault()
+
+        $("#firstname").val()
+        if ($("#firstname").val() == "") {
+          $("#nameId").addClass('has-error')
+        }
+        if ($("#lastname").val() == "") {
+          $("#lastId").addClass('has-error')
+        }
+        if ($("#email").val() == "") {
+          $("#emailId").addClass('has-error')
+        }
+      })
+    </script>
 
 </body>
 
