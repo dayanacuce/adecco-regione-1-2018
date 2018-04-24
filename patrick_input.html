@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+  To check input client side we use java script.
+
+  GET:
+    URL?varName=value&varName1=value1
+
+  POST:
+    URL + Body of the html with data like userName, psw ecc.
+    See w3schools for more.
+-->
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="/action_page.php" method="POST"> <!-- action: File destination, method: GET or POST -->
+      First name: <br>
+      <input type="text" name="firstname"><br>
+      Password:<br>
+      <input type="password" name="lastname"><br>
+      <input type="test" placeholder="Name"><br>
+      <input type="submit" value="Submit">
+    </form>
+
+    <form class="" action="index.html" method="post">
+      <input type="radio" name="gender" value="male">Male<br>
+      <input type="radio" name="gender" value="female">Female<br>
+      <input type="radio" name="gender" value="other">Other<br>
+    </form>
+  </body>
+</html>
