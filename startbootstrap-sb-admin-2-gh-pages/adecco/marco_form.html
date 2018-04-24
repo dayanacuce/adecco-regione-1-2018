@@ -62,48 +62,81 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <h1 class="page-header">Contact form</h1>
-                        <form action="http://adecco.local/sendmail.php" method="post">
+                        <form role="form" action="http://adecco.local/sendmail.php" method="post">
                           <div class="form-group">
-                            <label>First Name:</label>
-                            <input class="form-control" name="firstname" placeholder="First Name">
-                          </div>
-
-                          <div class="form-group">
-                            <label>Last Name:</label>
-                            <input class="form-control" name="lastname" placeholder="Last Name">
+                            <label class="control-label" for="firstname">First Name:</label>
+                            <input class="form-control" name="firstname" id="firstname" placeholder="First Name">
                           </div>
 
                           <div class="form-group">
-                            <label>Email:</label>
-                            <input class="form-control" name="email" type="email" placeholder="example@email.it">
+                            <label class="control-label" for="lasttname">Last Name:</label>
+                            <input class="form-control" name="lastname" id="lastname" placeholder="Last Name">
                           </div>
 
-                          <label>Sex</label>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="sex" id="optionsRadios1" value="Male" checked>Male
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="sex" id="optionsRadios2" value="Female">Female
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="sex" id="optionsRadios3" value="Other">Other
-                                </label>
-                            </div>
-
-                           <label>Message:</label>
-                           <textarea class="form-control" name="message" rows="8"></textarea>
-
-                           <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="privacy" value="">Accept Privacy Conditions
-                            </label>
+                          <div class="form-group">
+                            <label class="control-label" for="email">Email:</label>
+                            <input class="form-control" name="email" type="email" id="email" placeholder="example@email.it">
                           </div>
-                          <button type="submit" class="btn btn-default">Submit Button</button>
+
+                          <div class="form-group">
+                            <label>Sex</label><br>
+                              <div class="radio-inline">
+                                  <label>
+                                      <input type="radio" name="sex" value="Male" checked>Male
+                                  </label>
+                              </div>
+                              <div class="radio-inline">
+                                  <label>
+                                      <input type="radio" name="sex" value="Female">Female
+                                  </label>
+                              </div>
+                              <div class="radio-inline">
+                                  <label>
+                                      <input type="radio" name="sex" value="Other">Other
+                                  </label>
+                              </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label class="control-label" for="message">Message:</label>
+                            <textarea class="form-control" name="message" id="message" rows="8"></textarea>
+                          </div>
+
+                          <div class="form-group">
+                            <div class="checkbox">
+                              <label>
+                                  <input type="checkbox" id="privacy">Accept Privacy Conditions
+                              </label>
+
+                              <!-- Button trigger modal -->
+                              <a class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                                  View Condiction
+                              </a>
+                              <!-- Modal -->
+                              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                              <h4 class="modal-title" id="myModalLabel">Privacy Condiction:</h4>
+                                          </div>
+                                          <div class="modal-body">
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                          </div>
+                                          <div class="modal-footer">
+                                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                              <button type="button" class="btn btn-primary">Accept</button>
+                                          </div>
+                                      </div>
+                                      <!-- /.modal-content -->
+                                  </div>
+                                  <!-- /.modal-dialog -->
+                              </div>
+                              <!-- /.modal -->
+                          </div>
+                          <!-- .panel-body -->
+
+                          <button type="submit" id="submitBtn" class="btn btn-default" disabled>Submit Button</button>
                           <button type="reset" class="btn btn-default">Reset Button</button>
 
                         </form>
@@ -130,6 +163,25 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+
+    <script>
+      $("#privacy").on("change", function(resp){
+        if(this.checked){
+          $("#submitBtn").attr('disabled', null);
+        }else{
+          $("#submitBtn").attr('disabled', 'disabled');
+        }
+      });
+
+      $("form").on('submit', function(e){
+        e.preventDefault(); //previene la spedizione del form
+        var input_field = $("#firstname").val();
+        var input_value = input_field.val();
+        if (input_value == '') {
+          input_field.parent().addClass('has-error'); //.parent() va a prendere la classe in cui è contenuto          
+        }
+      });
+    </script>
 
 </body>
 
