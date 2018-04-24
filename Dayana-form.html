@@ -72,12 +72,12 @@
                                    name="firstname" id="firstname" />
                           </div>
                           <div class="form-group">
-                            <label class="control-label" for="lastname">Last name</label>
-                            <input class="form-control" type="text" name="lastname" id="lastname" />
+                            <label>Last name</label>
+                            <input class="form-control" type="text" name="lastname" />
                           </div>
                           <div class="form-group">
-                            <label class="control-label" for="email">Email</label>
-                            <input class="form-control" type="email" name="email" id="email" />
+                            <label>Email</label>
+                            <input class="form-control" type="email" name="email" />
                           </div>
                           <div class="form-group">
                               <label>Sex</label><br />
@@ -92,8 +92,8 @@
                               </label>
                           </div>
                           <div class="form-group">
-                              <label class="control-label" for="message">Message</label>
-                              <textarea  class="form-control" id="message" name="message" rows="5"></textarea>
+                              <label>Message</label>
+                              <textarea class="form-control" name="message" rows="5"></textarea>
                           </div>
 
                           <div class="form-group">
@@ -170,21 +170,7 @@
       $("form").on('submit', function(e){
         e.preventDefault();
 
-        checkRequiredField($("#firstname"));
-        checkRequiredField($("#lastname"));
-        checkRequiredField($("#email"));
-        checkRequiredField($("#message"));
-
       });
-
-      function checkRequiredField(input_field){
-        var input_value = input_field.val();
-        if(input_value == ''){
-          input_field.parent().addClass('has-error');
-          return false;
-        }
-        return true;
-      }
     </script>
 </body>
 
