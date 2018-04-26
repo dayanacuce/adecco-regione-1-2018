@@ -80,7 +80,16 @@
                             <input class="form-control" type="email" name="email" id="email" />
                           </div>
                           <div class="form-group">
+                              <label>Sex</label>
+                              <select name="sex" class="form-control">
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                                  <option value="other">Other</option>
+                              </select>
+                          </div>
+                          <!-- div class="form-group">
                               <label>Sex</label><br />
+
                               <label class="radio-inline">
                                   <input type="radio" name="sex" value="Male" checked>Male
                               </label>
@@ -90,7 +99,7 @@
                               <label class="radio-inline">
                                   <input type="radio" name="Sex" value="Other">Other
                               </label>
-                          </div>
+                          </div -->
                           <div class="form-group">
                               <label class="control-label" for="message">Message</label>
                               <textarea  class="form-control" id="message" name="message" rows="5"></textarea>
@@ -159,23 +168,43 @@
     <script src="../dist/js/sb-admin-2.js"></script>
 
     <script>
-      $("#privacy").on("change", function(resp){
-        if(this.checked){
-          $("#submitBtn").attr('disabled', null);
+      $("#privacy").on("change", privacyChanged);
+
+      function privacyChanged(event){
+        toggleSubmit(this.checked);
+      }
+
+      function toggleSubmit(enable){
+        var submit_btn = $("#submitBtn");
+        if(enable){
+          submit_btn.attr('disabled', null);
         }else{
-          $("#submitBtn").attr('disabled', 'disabled');
+          submit_btn.attr('disabled', 'disabled');
         }
-      });
+      }
 
       $("form").on('submit', function(e){
         e.preventDefault();
 
-        checkRequiredField($("#firstname"));
-        checkRequiredField($("#lastname"));
-        checkRequiredField($("#email"));
-        checkRequiredField($("#message"));
+        resetError("firstname");
+        resetError("lastname");
+        resetError("email");
+        resetError("message");
 
+        var submittable = true;
+        submittable = checkRequiredField($("#firstname")) && submittable;
+        submittable = checkRequiredField($("#lastname")) && submittable;
+        submittable = checkRequiredField($("#email")) && submittable;
+        submittable = checkRequiredField($("#message")) && submittable;
+
+        if(submittable){
+          $("form")[0].submit();
+        }
       });
+
+      function resetError(id){
+        $("#"+id).parent().removeClass('has-error');
+      }
 
       function checkRequiredField(input_field){
         var input_value = input_field.val();
