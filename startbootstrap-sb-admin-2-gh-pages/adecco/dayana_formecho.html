@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--controllo della data+inserimento data+rosso se non scritto+ nuovamente binco se scrivo-->
 <html lang="en">
 
 <head>
@@ -22,6 +23,8 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="../css/bootstrap-datepicker.standalone.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -66,15 +69,18 @@
                         <form role="form"
                               action="http://adecco.local/sendmail.php"
                               method="post">
+
                           <div class="form-group">
                             <label class="control-label" for="comunityname">Inserisci il nome della comunità.</label>
                             <input class="form-control" type="text"
-                                   name="comunityname" id="comunityname" />
+                                   name="comunityname" id="comunityname"/>
                           </div>
+
                           <div class="form-group">
                             <label class="control-label" for="familiesnumber">Da quante famiglie è composta la comunità?</label>
                             <input class="form-control" type="text" name="familiesnumber" id="familiesnumber" />
                           </div>
+
 
                           <div class="form-group">
                               <label>Classificazione della selva in cui è stanziata la comunità indigena.</label><br />
@@ -89,6 +95,7 @@
                               </label>
                           </div>
 
+
                           <div class="form-group">
                               <label>La comunità è stata coinvolta nella alluvione del 2018?</label>
                               <select class="form-control">
@@ -97,23 +104,26 @@
                               </select>
                           </div>
 
+
                           <div class="form-group">
-                              <label>Inserisci un valore da 1 a 5  per indicare la gravità dei danni subiti dalla comunità a seguito dell'alluvioneS</label><br />
+                              <label>La comunità è stata coinvolta nella alluvione del 2018?</label><br />
                               <label class="radio-inline">
-                                  <input type="radio" name="damagegrade" value="first" checked>Nessun Danno
+                                  <input type="radio" name="damagegrade" value="first" checked> Si
                               </label>
                               <label class="radio-inline">
-                                  <input type="radio" name="damagegrade" value="second"> Danni lievi
+                                  <input type="radio" name="damagegrade" value="second"> NO
                               </label>
-                              <label class="radio-inline">
-                                  <input type="radio" name="damagegrade" value="third">Qualche danno
-                              </label>
-                              <label class="radio-inline">
-                                  <input type="radio" name="damagegrade" value="fourth">Danni gravi
-                              </label>
-                              <label class="radio-inline">
-                                  <input type="radio" name="damagegrade" value="fifth">Danni molto gravi
-                              </label>
+                          </div>
+
+                          <div class="form-group">
+                              <label>Inserisci un valore da 1 a 5  per indicare la gravità dei danni subiti dalla comunità a seguito dell'alluvione </label>
+                              <select class="form-control">
+                                  <option>Nessun Danno</option>
+                                  <option> Danni lievi</option>
+                                  <option>Qualche danno</option>
+                                  <option>Danni gravi</option>
+                                    <option>Danni molto gravi</option>
+                              </select>
                           </div>
 
 
@@ -167,10 +177,17 @@
                             </div>
 
                             <div class="form-group">
+                              <label> data   </label>
+                              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text">
+                            </div>
+
+
+                            <div class="form-group">
                                 <div class="checkbox">
                                   <label>
-                                    <input type="checkbox" id="privacy">I dati inseriti sono corretti e validati del capo progetto
+                                    <input  type="checkbox" id="privacy">I dati inseriti sono corretti e validati dal capo progetto
                                   </label>
+
 
                                 <!-- Button trigger modal -->
                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">
@@ -225,8 +242,14 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
+    <!-- Pendere un file js si mette alla fine della pag tra script-->
+
+    <script src="../js/bootstrap-datepicker.min.js"></script>
+
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+
+
 
     <script>
 
@@ -242,10 +265,10 @@
       $("form").on('submit', function(e){
         e.preventDefault();
 
-        resrtError ("comunityname")
-        resrtError ("familiesnumber")
+        resrtError ("comunityname");
+        resrtError ("familiesnumber");
 
-        var= submittable = true;
+        var submittable = true;
         submittable = checkRequiredField && submittable($("#comunityname"));
         submittable = checkRequiredField && submittable($("#familiesnumber"));
 
@@ -270,6 +293,18 @@
         }
         return true;
       }
+
+      $(document).ready(function(){
+          var date_input=$('input[name="date"]'); //our date input has the name "date"
+          var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+          var options={
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+          };
+          date_input.datepicker(options);
+        })
     </script>
 
     <!--
