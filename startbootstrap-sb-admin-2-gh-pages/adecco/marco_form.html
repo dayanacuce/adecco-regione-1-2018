@@ -64,12 +64,12 @@
                         <h1 class="page-header">Contact form</h1>
                         <form role="form" action="http://adecco.local/sendmail.php" method="post">
                           <div class="form-group">
-                            <label class="control-label" for="firstname">First Name:</label>
+                            <label class="control-label" for="firstname">First Name:</label>      <!--for indica l'id per cui fare il controllo-->
                             <input class="form-control" name="firstname" id="firstname" placeholder="First Name">
                           </div>
 
                           <div class="form-group">
-                            <label class="control-label" for="lasttname">Last Name:</label>
+                            <label class="control-label" for="lastname">Last Name:</label>
                             <input class="form-control" name="lastname" id="lastname" placeholder="Last Name">
                           </div>
 
@@ -79,6 +79,16 @@
                           </div>
 
                           <div class="form-group">
+                              <label>Sex</label>
+                              <select name="sex" class="form-control">
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                                  <option value="other">Other</option>
+
+                              </select>
+                          </div>
+
+                          <!-- div class="form-group">
                             <label>Sex</label><br>
                               <div class="radio-inline">
                                   <label>
@@ -95,7 +105,7 @@
                                       <input type="radio" name="sex" value="Other">Other
                                   </label>
                               </div>
-                          </div>
+                          </div-->
 
                           <div class="form-group">
                             <label class="control-label" for="message">Message:</label>
@@ -165,23 +175,63 @@
     <script src="../dist/js/sb-admin-2.js"></script>
 
     <script>
-      $("#privacy").on("change", function(resp){
-        if(this.checked){
-          $("#submitBtn").attr('disabled', null);
-        }else{
+      $("#privacy").on("change", function(event){       // prendiamo l'elemtento privacy con il selettore di jquery $
+        if(this.checked){                               // .on fa il bounding ovvero sta in ascolto di un determinato evento che succede su un determinato tag
+          $("#submitBtn").attr('disabled', null);       // in questo caso è l'evento change sul tag privacy cioè se la spunta nel checkbox privacy è attiva oppure no
+        }else{                                          // se avviene l'evento change esegui la funzione
           $("#submitBtn").attr('disabled', 'disabled');
         }
       });
 
+      /*$("#privacy").on("change", privacyChanged);   questo codice è per rendere la funzione generica da poter riutilizzare per altri tag
+
+      function privacyChanged(event){
+        toggleSubmit(this.checked);
+      }
+
+      function toggleSubmit(enable) {
+        var submit_btn = $("#submitBtn");
+        if(enable){
+        submit_btn.attr('disabled', null);
+        }else{
+        submit_btn.attr('disabled', 'disabled');
+        }
+      }*/
+
       $("form").on('submit', function(e){
         e.preventDefault(); //previene la spedizione del form
-        var input_field = $("#firstname").val();
-        var input_value = input_field.val();
-        if (input_value == '') {
-          input_field.parent().addClass('has-error'); //.parent() va a prendere la classe in cui è contenuto          
+
+        resetErrors("firstname");
+        resetErrors("lastname");
+        resetErrors("email");
+        resetErrors("message");
+
+        var submitable = true;
+
+        submitable = checkRequiredField($("#firstname")) && submitable;
+        submitable = checkRequiredField($("#lastname")) && submitable;
+        submitable = checkRequiredField($("#email")) && submitable;
+        submitable = checkRequiredField($("#message")) && submitable;
+
+        if(submitable){
+          $("form")[0].submit();    //aggiungere[0] perche jquery crea un array e così controllare cosa succede nel primo elemento dell'array
         }
+
       });
-    </script>
+
+      function resetErrors(id){
+        $("#"+id).parent().removeClass('has-error')
+      }
+
+      function checkRequiredField(input_field){
+        var input_value = input_field.val();              // la variabile interna alla funzione input_value prende il valore di input_field
+        if(input_value == ''){                            // se il valore è uguale alla stringa vuota
+          input_field.parent().addClass('has-error');     // .parent() va a prendere la classe in cui è contenuto il tag e va aggiungere l'attributo has-error
+          return false;
+        }
+        return true;
+      }
+   </script>
 
 </body>
 
