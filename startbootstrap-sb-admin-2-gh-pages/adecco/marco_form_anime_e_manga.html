@@ -64,21 +64,21 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <h1 class="page-header">Form Manga & Anime</h1>
-                        <form role="form" action="http://adecco.local/sendmail.php" method="post">
+                        <form role="form" action="http://adecco.local/post_reader.php" method="post">
                           <div class="form-group">
                             <label class="control-label" for="manga">Manga:</label>      <!--for indica l'id per cui fare il controllo-->
                             <input type="text" class="form-control" name="manga" id="manga" placeholder="One Piece">
                           </div>
 
                           <div class="form-group">
-                            <label class="control-label" for="autore">Autore:</label>
-                            <input type="text" class="form-control" name="autore" id="autore" placeholder="Eiichiro Oda">
+                            <label class="control-label" for="author">Autore:</label>
+                            <input type="text" class="form-control" name="author" id="author" placeholder="Eiichiro Oda">
                           </div>
 
                           <div class="form-group">
-                            <label class="control-label" for="data">Data 1^ Uscita:</label>
+                            <label class="control-label" for="date">Data 1^ Uscita:</label>
                             <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-end-date="0d">
-                              <input type="text" class="form-control" name="data" id="data" placeholder="DD/MM/YYYY">
+                              <input type="text" class="form-control" name="date" id="date" placeholder="DD/MM/YYYY">
                                 <div class="input-group-addon">
                                     <span class="glyphicon glyphicon-th"></span>
                                 </div>
@@ -86,8 +86,8 @@
                           </div>
 
                           <div class="form-group">
-                              <label>Cadenza:</label>
-                              <select name="cadenza" class="form-control" id="cadenza">
+                              <label class="control-label" for="frequency">Cadenza:</label>
+                              <select name="frequency" class="form-control" id="frequency">
                                 <option value="">Selezionare: - - -</option>
                                 <option value="1">Settimanale</option>
                                 <option value="2">Mensile</option>
@@ -96,15 +96,15 @@
                           </div>
 
                           <div class="form-group">
-                            <label>Trasposizione Anime:</label>
+                            <label class="control-label" for="anime">Trasposizione Anime:</label>
                             <label class="checkbox-inline">
-                                <input type="checkbox" id="anime">Si
+                                <input type="checkbox" name="anime "id="anime">Si
                             </label>
                           </div>
 
                           <div class="form-group">
-                              <label>Voto Anime:</label>
-                              <select name="voto" class="form-control" id="voto" disabled>
+                              <label class="control-label" for="vote">Voto Anime:</label>
+                              <select name="vote" class="form-control" id="vote" disabled>   <!-- disabled attributo di default di html degli input che disabilità il campo -->
                                 <option value="">Selezionare: - - -</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -200,52 +200,93 @@
 
     <script>
 
-    $("#anime").on("change", function(event){       // prendiamo l'elemtento privacy con il selettore di jquery $
-      if(this.checked){                               // .on fa il bounding ovvero sta in ascolto di un determinato evento che succede su un determinato tag
-        $("#voto").attr('disabled', null);       // in questo caso è l'evento change sul tag privacy cioè se la spunta nel checkbox privacy è attiva oppure no
-      }else{                                          // se avviene l'evento change esegui la funzione
-        $("#voto").attr('disabled', 'disabled');
+    $("#anime").on("change", function(event){       // prendiamo l'elemtento privacy con il selettore di jquery $ che richiama le librerie di jquery
+      if(this.checked){                             // .on è un metodo e fa il bounding ovvero sta in ascolto di un determinato evento che succede su un determinato tag
+        $("#vote").attr('disabled', null);          // in questo caso è l'evento change sul tag privacy cioè se la spunta nel checkbox privacy è attiva oppure no
+      }else{                                        // se avviene l'evento change esegui la funzione
+        $("#vote").attr('disabled', 'disabled');
       }
     });
 
     $("form").on('submit', function(e){
-      e.preventDefault(); //previene la spedizione del form
+      e.preventDefault();   // previene la spedizione del form previene quello che di default fa il determinato evento
+                            // e nome dela funzione - preventDefault metodo della funzione
+      var fields = [        //dichiarazione del vettore con all'interno stringhe
+        'manga',
+        'author',
+        'date',
+        'frequency',
+        'anime',
+        'vote'
+      ];
 
-      resetErrors("manga");
-      resetErrors("autore");
-      resetErrors("cadenza");
-      resetErrors("anime");
-      resetErrors("voto");
+      var submitable = true;
+
+      for (var i = 0; i < fields.length; i++) {
+        var input_id = fields[i];
+
+        resetErrors(input_id);
+
+        var input_field = $("#"+input_id);
+        var input_value = input_field.val();  //.val prende il valore del campo
+
+        var input_error = !checkRequiredField(input_value);
+
+        if (input_id == 'manga' || input_id == 'author' ) {
+          input_error = !checkOnlyLetter(input_value);
+        }
+
+        if (input_error) {
+          submitable = false;
+          input_field.parent().addClass('has-error');
+        }
+      }
+      /*resetErrors("manga");
+      resetErrors("author");
+      resetErrors("date");
+      resetErrors("frequency");
+      resetErrors("vote");
 
       var submitable = true;
 
       submitable = checkRequiredField($("#manga")) && submitable;
-      submitable = checkRequiredField($("#autore")) && submitable;
-      submitable = checkRequiredField($("#data")) && submitable;
-      submitable = checkRequiredField($("#cadenza")) && submitable;
+      submitable = checkRequiredField($("#author")) && submitable;
+      submitable = checkRequiredField($("#date")) && submitable;
+      submitable = checkRequiredField($("#frequency")) && submitable;
 
       if ($("#anime")[0].checked) {
-        submitable = checkRequiredField($("#voto")) && submitable;
+        submitable = checkRequiredField($("#vote")) && submitable;
       }
+
+
 
       if(submitable){
         $("form")[0].submit();
       }
 
-    });
+    });*/
 
     function resetErrors(id){
       $("#"+id).parent().removeClass('has-error')
     }
 
-    function checkRequiredField(input_field){
+    function checkRequiredField(input_value){
+      return input_value != '';
+    }
+
+    function checkOnlyLetter(str){
+      var re =  /^[A-Za-zÀ-ÿ\s]+$/;
+      return re.test(str);
+    }
+
+    /*function checkRequiredField(input_field){
       var input_value = input_field.val();              // la variabile interna alla funzione input_value prende il valore di input_field
       if(input_value == ''){                            // se il valore è uguale alla stringa vuota
         input_field.parent().addClass('has-error');     // .parent() va a prendere la classe in cui è contenuto il tag e va aggiungere l'attributo has-error
         return false;
       }
       return true;
-    }
+    }*/
 
    </script>
 
