@@ -105,7 +105,7 @@
                                       <input type="radio" name="sex" value="Other">Other
                                   </label>
                               </div>
-                          </div-->
+                          </div -->
 
                           <div class="form-group">
                             <label class="control-label" for="message">Message:</label>
@@ -146,7 +146,7 @@
                           </div>
                           <!-- .panel-body -->
 
-                          <button type="submit" id="submitBtn" class="btn btn-default" disabled>Submit Button</button>
+                          <button type="submit" id="submitBtn" class="btn btn-default" disabled>Submit Button</button>  <!-- disabled attributo di default di html degli input che disabilità il campo -->
                           <button type="reset" class="btn btn-default">Reset Button</button>
 
                         </form>
@@ -175,15 +175,16 @@
     <script src="../dist/js/sb-admin-2.js"></script>
 
     <script>
-      $("#privacy").on("change", function(event){       // prendiamo l'elemtento privacy con il selettore di jquery $
-        if(this.checked){                               // .on fa il bounding ovvero sta in ascolto di un determinato evento che succede su un determinato tag
-          $("#submitBtn").attr('disabled', null);       // in questo caso è l'evento change sul tag privacy cioè se la spunta nel checkbox privacy è attiva oppure no
-        }else{                                          // se avviene l'evento change esegui la funzione
+
+      /*$("#privacy").on("change", function(event){        // prendiamo l'elemtento privacy con il selettore di jquery $ che richiama le librerie di jquery
+        if(this.checked){                                // .on è un metodo e fa il bounding ovvero sta in ascolto di un determinato evento che succede su un determinato tag
+          $("#submitBtn").attr('disabled', null);        // in questo caso è l'evento change sul tag privacy cioè se la spunta nel checkbox privacy è attiva oppure no
+        }else{                                           // se avviene l'evento change esegui la funzione
           $("#submitBtn").attr('disabled', 'disabled');
         }
-      });
+      });*/
 
-      /*$("#privacy").on("change", privacyChanged);   questo codice è per rendere la funzione generica da poter riutilizzare per altri tag
+      $("#privacy").on("change", privacyChanged);   //questo codice è per rendere la funzione generica da poter riutilizzare per altri tag
 
       function privacyChanged(event){
         toggleSubmit(this.checked);
@@ -196,40 +197,65 @@
         }else{
         submit_btn.attr('disabled', 'disabled');
         }
-      }*/
+      }
 
       $("form").on('submit', function(e){
-        e.preventDefault(); //previene la spedizione del form
-
-        resetErrors("firstname");
-        resetErrors("lastname");
-        resetErrors("email");
-        resetErrors("message");
+        e.preventDefault();   // previene la spedizione del form previene quello che di default fa il determinato evento
+                              // e nome dela funzione - preventDefault metodo della funzione
+        var fields = [        //dichiarazione del vettore con all'interno stringhe
+          'firstname',
+          'lastname',
+          'email',
+          'message'
+        ];
 
         var submitable = true;
 
-        submitable = checkRequiredField($("#firstname")) && submitable;
-        submitable = checkRequiredField($("#lastname")) && submitable;
-        submitable = checkRequiredField($("#email")) && submitable;
-        submitable = checkRequiredField($("#message")) && submitable;
+        for (var i = 0; i < fields.length; i++) {
+          var input_id = fields[i];
 
-        if(submitable){
-          $("form")[0].submit();    //aggiungere[0] perche jquery crea un array e così controllare cosa succede nel primo elemento dell'array
+          resetErrors(input_id);
+
+          var input_field = $("#"+input_id);
+          var input_value = input_field.val();  //.val prende il valore del campo
+
+          var input_error = !checkRequiredField(input_value);
+
+          if (input_id == 'firstname' || input_id == 'lastname' ) {
+            input_error = !checkOnlyLetter(input_value);
+          }
+
+          if (input_error) {
+            submitable = false;
+            input_field.parent().addClass('has-error');
+          }
         }
 
+        if(submitable){
+          $("form")[0].submit();    //aggiungere[0] perche jquery crea un array e così controlla cosa succede nel primo elemento dell'array
+        }
       });
 
       function resetErrors(id){
-        $("#"+id).parent().removeClass('has-error')
+        $("#"+id).parent().removeClass('has-error');
       }
 
-      function checkRequiredField(input_field){
+      function checkRequiredField(input_value){
+        return input_value != '';
+      }
+
+      /*function checkRequiredField(input_field){
         var input_value = input_field.val();              // la variabile interna alla funzione input_value prende il valore di input_field
         if(input_value == ''){                            // se il valore è uguale alla stringa vuota
           input_field.parent().addClass('has-error');     // .parent() va a prendere la classe in cui è contenuto il tag e va aggiungere l'attributo has-error
           return false;
         }
         return true;
+      }*/
+
+      function checkOnlyLetter(str){
+        var re =  /^[A-Za-zÀ-ÿ\s]+$/;
+        return re.test(str);
       }
    </script>
 

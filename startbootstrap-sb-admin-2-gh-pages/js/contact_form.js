@@ -23,11 +23,13 @@ $("form").on('submit', function(e){
   var fields = [
     'firstname',
     'lastname',
+    'date',
     'email',
     'message'
   ];
 
   var submittable = true;
+
   for(var i=0; i<fields.length; i++){
     var input_id = fields[i];
 
@@ -36,10 +38,10 @@ $("form").on('submit', function(e){
     var input_field = $("#"+input_id);
     var input_value = input_field.val();
 
-    var input_error = !checkRequiredField(value);
+    var input_error = !checkRequiredField(input_value);
 
     if(input_id == 'firstname' || input_id == 'lastname'){
-      input_error = !checkOnlyLetter(value);
+      input_error = !checkOnlyLetter(input_value);
     }
 
     if(input_error){
@@ -62,6 +64,6 @@ function checkRequiredField(input_value){
 }
 
 function checkOnlyLetter(str){
-  var re =  /^[A-Za-zÀ-ÿ\s]+$/;
+  var re =  /^[A-Za-zÀ-ÖØ-öø-žぁ-ゞ\s]+$/;
   return re.test(str);
 }

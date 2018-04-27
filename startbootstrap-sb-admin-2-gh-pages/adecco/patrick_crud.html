@@ -62,29 +62,29 @@
                       <div class="col-lg-12">
                           <h1 class="page-header">Contact form</h1>
                       </div>
-                      <form action="http://adecco.local/sendmail.php" method="post">
+                      <form action="http://adecco.local/post_reader.php" method="post">
                         <div class="form-group">
                           <label>Nome</label>
-                          <input class="form-control" name="nome" id="nome">
+                          <input class="form-control" name="name" id="name">
                         </div>
                         <div class="form-group">
                           <label>Sede</label>
-                          <input class="form-control" name="sede" value="" id="sede">
+                          <input class="form-control" name="office" value="" id="office">
                         </div>
                         <div class="form-group">
                           <label>#Programmatori</label>
                           <div class="radio">
-                            <select name="sex"class="form-control" id="programmatori">
+                            <select name="programmers"class="form-control" id="programmers">
                               <option value="nessuno">Nessuno</option>
-                              <option value="10">0-10</option>
-                              <option value="20">10-20</option>
-                              <option value="30">20-30</option>
-                              <option value="more">More than 30</option>
+                              <option value="0-10">0-10</option>
+                              <option value="10-20">10-20</option>
+                              <option value="20-30">20-30</option>
+                              <option value="more than 30">More than 30</option>
                             </select>
                           </div>
                         <div class="form-group">
                           <label>Giochi Pubblicati</label><br>
-                          <textarea class="form-control" name="message" rows="3" id="pubblicati"></textarea>
+                          <textarea class="form-control" name="published" rows="3" id="published"></textarea>
                         </div>
                         <div class="form-group">
                           <label>Date</label>
@@ -157,6 +157,6 @@
       <!-- Custom Theme JavaScript -->
       <script src="../dist/js/sb-admin-2.js"></script>
       <script src="../js/bootstrap-datepicker.min.js"></script>
-      <script src="../adecco/crud.js"></script>
+      <script src="../js/crud.js"></script>
   </body>
 </html>
