@@ -2,7 +2,7 @@
 <html lang="en">
 
       <head>
-       <title>Form Calcio Partite</title>
+       <title>Form football match</title>
           <meta charset="utf-8">
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
           <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,27 +60,27 @@
                              <h1 class="page-header">Contact form</h1>
           <div>
             <form role="form"
-                action="http://adecco.local/sendmail.php"
+                action="http://adecco.local/post_reader.php"
                 method="post">
             <div class="form-group">
               <label>team1</label>
-              <input class="form-control" type="text" name="team1" />
+              <input class="form-control" type="text" name="team1" id="team1" />
             </div>
             <div class="form-group">
               <label>team2</label>
-              <input class="form-control" type="text" name="team2" />
+              <input class="form-control" type="text" name="team2" id="team2" />
             </div>
             <div class="form-group">
               <label>championship</label>
-              <input class="form-control" type="text" name="championship" />
+              <input class="form-control" type="text" name="championship" id="championship" />
             </div>
             <div class="form-group">
               <label>result</label>
-              <input class="form-control" type="text" name="result" />
+              <input class="form-control" type="text" name="result" id="result" />
             </div>
             <div class="form-group">
               <label>date</label>
-              <input class="form-control" type="text" name="date" />
+              <input class="form-control" type="text" name="date" id="date" />
             </div>
             <div class="form-group">
                 <label class="control-label" for="message">match comment</label>
@@ -89,10 +89,7 @@
 
             <div class="form-group">
               <div class="checkbox">
-
-
-
-                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                       <div class="modal-content">
                         <div class="modal-header">
@@ -111,7 +108,7 @@
               </div>
             </div>
             <div>
-            <button type="reset" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default">Submit</button>
             </div>
           </form>
           <br /><br />
@@ -140,7 +137,7 @@
 <script src="../dist/js/sb-admin-2.js"></script>
 
 <script>
-$("#privacy").on("change", privacyChanged);
+
 
 $("form").on('submit', function(e){
 e.preventDefault();
