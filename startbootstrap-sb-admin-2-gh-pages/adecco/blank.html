@@ -177,58 +177,7 @@
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
 
-    <script>
-      $(document).ready(function(){
-        $("#date").datepicker();
-      });
-
-      $("#privacy").on("change", privacyChanged);
-
-      function privacyChanged(event){
-        toggleSubmit(this.checked);
-      }
-
-      function toggleSubmit(enable){
-        var submit_btn = $("#submitBtn");
-        if(enable){
-          submit_btn.attr('disabled', null);
-        }else{
-          submit_btn.attr('disabled', 'disabled');
-        }
-      }
-
-      $("form").on('submit', function(e){
-        e.preventDefault();
-
-        resetError("firstname");
-        resetError("lastname");
-        resetError("email");
-        resetError("message");
-
-        var submittable = true;
-        submittable = checkRequiredField($("#firstname")) && submittable;
-        submittable = checkRequiredField($("#lastname")) && submittable;
-        submittable = checkRequiredField($("#email")) && submittable;
-        submittable = checkRequiredField($("#message")) && submittable;
-
-        if(submittable){
-          $("form")[0].submit();
-        }
-      });
-
-      function resetError(id){
-        $("#"+id).parent().removeClass('has-error');
-      }
-
-      function checkRequiredField(input_field){
-        var input_value = input_field.val();
-        if(input_value == ''){
-          input_field.parent().addClass('has-error');
-          return false;
-        }
-        return true;
-      }
-    </script>
+    <script src="../dist/js/contact_form.js"></script>
 </body>
 
 </html>
