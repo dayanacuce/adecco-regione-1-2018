@@ -216,14 +216,25 @@
         'author',
         'date',
         'frequency',
-        'anime',
-        'vote'
+        'anime'
       ];
 
       var submitable = true;
 
       for (var i = 0; i < fields.length; i++) {
         var input_id = fields[i];
+
+        if(input_id == 'anime' && $("#anime")[0].checked){
+          var input_field = $("#vote");
+          var input_value = input_field.val();  //.val prende il valore del campo
+
+          var input_error = !checkRequiredField(input_value);
+
+          if (input_error) {
+            submitable = false;
+            input_field.parent().addClass('has-error');
+          }
+        }
 
         resetErrors(input_id);
 
@@ -256,15 +267,13 @@
 
       if ($("#anime")[0].checked) {
         submitable = checkRequiredField($("#vote")) && submitable;
-      }
-
-
+      }*/
 
       if(submitable){
         $("form")[0].submit();
       }
 
-    });*/
+    });
 
     function resetErrors(id){
       $("#"+id).parent().removeClass('has-error')
@@ -275,7 +284,7 @@
     }
 
     function checkOnlyLetter(str){
-      var re =  /^[A-Za-zÀ-ÿ\s]+$/;
+      var re =  /^[A-Za-zÀ-ÖØ-öø-žぁ-ゞ\s]+$/;
       return re.test(str);
     }
 
