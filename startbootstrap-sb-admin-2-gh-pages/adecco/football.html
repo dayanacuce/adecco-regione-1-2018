@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+      <head>
+       <title>Form football match</title>
+          <meta charset="utf-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta name="description" content="">
+          <meta name="author" content="">
+
+          <!-- Bootstrap Core CSS -->
+          <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+          <!-- MetisMenu CSS -->
+          <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+          <!-- Custom CSS -->
+          <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+          <!-- Custom Fonts -->
+          <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+          <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+          <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+          <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+              <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+          <![endif]-->
+
+      </head>
+
+       <body>
+             <div id="wrapper">
+
+             <!-- Navigation -->
+             <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                 <div class="navbar-header">
+                     <a class="navbar-brand" href="../index.html">SB Admin v2.0</a>
+                 </div>
+                 <!-- /.navbar-header -->
+
+                 <div class="navbar-default sidebar" role="navigation">
+                     <div class="sidebar-nav navbar-collapse">
+                         <ul class="nav" id="side-menu">
+                             <li>
+                                 <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                             </li>
+                         </ul>
+                     </div>
+                     <!-- /.sidebar-collapse -->
+                 </div>
+                 <!-- /.navbar-static-side -->
+             </nav>
+
+             <div id="page-wrapper">
+                 <div class="container-fluid">
+                     <div class="row">
+                         <div class="col-lg-12">
+                             <h1 class="page-header">Contact form</h1>
+          <div>
+            <form role="form"
+                action="http://adecco.local/post_reader.php"
+                method="post">
+            <div class="form-group">
+              <label>team1</label>
+              <input class="form-control" type="text" name="team1" id="team1" />
+            </div>
+            <div class="form-group">
+              <label>team2</label>
+              <input class="form-control" type="text" name="team2" id="team2" />
+            </div>
+            <div class="form-group">
+              <label>championship</label>
+              <input class="form-control" type="text" name="championship" id="championship" />
+            </div>
+            <div class="form-group">
+              <label>result</label>
+              <input class="form-control" type="text" name="result" id="result" />
+            </div>
+            <div class="form-group">
+              <label>date</label>
+              <input class="form-control" type="text" name="date" id="date" />
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="message">match comment</label>
+                <textarea  class="form-control" id="message" name="message" rows="5"></textarea>
+            </div>
+
+            <div class="form-group">
+              <div class="checkbox">
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        </div>
+                          <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                      <!-- /.modal-content -->
+                    </div>
+                  </div>
+                  <!-- /.modal-dialog -->
+                </div>
+              </div>
+            </div>
+            <div>
+            <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          </form>
+          <br /><br />
+      </div>
+      <!-- /.col-lg-12 -->
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+</div>
+<!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../dist/js/sb-admin-2.js"></script>
+
+<script>
+
+
+$("form").on('submit', function(e){
+e.preventDefault();
+
+resetError("team1");
+resetError("team2");
+resetError("championship");
+resetError("result");
+resetError("date");
+
+var submittable = true;
+submittable = checkRequiredField($("#team1")) && submittable;
+submittable = checkRequiredField($("#team2")) && submittable;
+submittable = checkRequiredField($("#championship")) && submittable;
+submittable = checkRequiredField($("#result")) && submittable;
+submittable = checkRequiredField($("#date")) && submittable;
+
+if(submittable){
+$("form")[0].submit();
+}
+});
+
+function resetError(id){
+$("#"+id).parent().removeClass('has-error');
+}
+
+function checkRequiredField(input_field){
+var input_value = input_field.val();
+if(input_value == ''){
+input_field.parent().addClass('has-error');
+return false;
+}
+return true;
+}
+</script>
+        </body>
+
+</html>
