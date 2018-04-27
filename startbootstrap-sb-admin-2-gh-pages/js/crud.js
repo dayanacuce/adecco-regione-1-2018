@@ -63,7 +63,7 @@ function checkField(input) {
 }
 
 function checkOnlyLetter(str) {
-  var re = /^[A-Za-zÀ-ÿ\s]+$/
+  var re = /^[A-Za-zÀ-ÖØ-öø-žぁ-ゞ\s]+$/
   return re.test(str)
 }
 
