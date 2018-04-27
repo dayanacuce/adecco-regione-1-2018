@@ -52,14 +52,14 @@ function resetError(id) {
 function checkField(input) {
     var value = input.val()
     if (value == "") {
-        input.parent().addClass('has-error')
-        return true
+      input.parent().addClass('has-error')
+      return true
     }
     return false
 }
 
 $('#event_period').datepicker({
-    inputs: $('.actual_range')
+  inputs: $('.actual_range')
 });
 
 $(document).ready(function(){
