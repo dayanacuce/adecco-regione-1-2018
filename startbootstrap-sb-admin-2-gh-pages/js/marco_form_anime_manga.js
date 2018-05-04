@@ -12,6 +12,7 @@ $("form").on('submit', function(e){
   var fields = [        //dichiarazione del vettore con all'interno stringhe
     'manga',
     'author',
+    'genre',
     'date',
     'frequency',
     'anime'
@@ -41,7 +42,7 @@ $("form").on('submit', function(e){
 
     var input_error = !checkRequiredField(input_value);
 
-    if (input_id == 'manga' || input_id == 'author' ) {
+    if (input_id == 'manga' || input_id == 'author' ||  input_id == 'genre') {
       input_error = !checkOnlyLetter(input_value);
     }
 
