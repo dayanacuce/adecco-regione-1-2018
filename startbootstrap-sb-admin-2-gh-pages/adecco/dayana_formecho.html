@@ -71,27 +71,27 @@
                               method="post">
 
                           <div class="form-group">
-                            <label class="control-label" for="comunity_name">Paese d'intervento.</label>
+                            <label class="control-label" for="country_name">Paese d'intervento.</label>
                                 <input class="form-control" type="text"
-                                       name="comunity_name" id="comunity_name"/>
+                                       name="country_name" id="country_name"/>
                           </div>
 
                           <div class="form-group">
-                            <label class="control-label" for="comunity_name">Nome e tipologia del Pogetto.</label>
+                            <label class="control-label" for="project_type">Nome e tipologia del Pogetto.</label>
                                 <input class="form-control" type="text"
-                                       name="comunity_name" id="comunity_name"/>
+                                       name="project_type" id="project_type"/>
                           </div>
 
                           <div class="form-group">
-                            <label class="control-label" for="comunity_name">Città d'intervento.</label>
+                            <label class="control-label" for="city_name">Città d'intervento.</label>
                                 <input class="form-control" type="text"
-                                       name="comunity_name" id="comunity_name"/>
+                                       name="city_name" id="city_name"/>
                           </div>
 
                           <div class="form-group">
-                            <label class="control-label" for="comunity_name">Capo Pogetto.</label>
+                            <label class="control-label" for="project_manager">Capo Pogetto.</label>
                                 <input class="form-control" type="text"
-                                       name="comunity_name" id="comunity_name"/>
+                                       name="project_manager" id="project_manager"/>
                           </div>
 
                           <div class="form-group">
@@ -343,8 +343,13 @@
         e.preventDefault();
 
         var fields = [
+          'country_name',
+          'project_type',
+          'city_name',
+          'project_manager',
           'comunity_name',
           'families_number',
+
         ];
 
         var submittable = true;
@@ -357,6 +362,19 @@
           var input_value = input_field.val();
 
           var input_error = !checkRequiredField(input_value);
+
+          if (input_id == "country_name"){
+            input_error = !checkOnlyNumber(input_value);
+          }
+          if (input_id == "project_type"){
+            input_error = !checkOnlyNumber(input_value);
+          }
+          if (input_id == "city_name"){
+            input_error = !checkOnlyNumber(input_value);
+          }
+          if (input_id == "project_manager"){
+            input_error = !checkOnlyNumber(input_value);
+          }
 
           if(input_id == 'comunity_name'){
             input_error = !checkOnlyLetter(input_value);
