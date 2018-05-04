@@ -71,13 +71,37 @@
                               method="post">
 
                           <div class="form-group">
-                            <label class="control-label" for="comunity_name">Inserisci il nome della comunità.</label>
+                            <label class="control-label" for="country_name">Paese d'intervento.</label>
+                                <input class="form-control" type="text"
+                                       name="country_name" id="country_name"/>
+                          </div>
+
+                          <div class="form-group">
+                            <label class="control-label" for="project_type">Nome e tipologia del Pogetto.</label>
+                                <input class="form-control" type="text"
+                                       name="project_type" id="project_type"/>
+                          </div>
+
+                          <div class="form-group">
+                            <label class="control-label" for="city_name">Città d'intervento.</label>
+                                <input class="form-control" type="text"
+                                       name="city_name" id="city_name"/>
+                          </div>
+
+                          <div class="form-group">
+                            <label class="control-label" for="project_manager">Capo Pogetto.</label>
+                                <input class="form-control" type="text"
+                                       name="project_manager" id="project_manager"/>
+                          </div>
+
+                          <div class="form-group">
+                            <label class="control-label" for="comunity_name">Nome della comunità.</label>
                             <input class="form-control" type="text"
                                    name="comunity_name" id="comunity_name"/>
                           </div>
 
                           <div class="form-group">
-                            <label class="control-label" for="families_number">Da quante famiglie è composta la comunità?</label>
+                            <label class="control-label" for="families_number">Numero di famiglie da cui è composta la comunità.</label>
                             <input class="form-control" type="text" name="families_number" id="families_number" />
                           </div>
 
@@ -115,7 +139,7 @@
                           </div
 
                           <div class="form-group">
-                              <label>Inserisci un valore da 1 a 5  per indicare la gravità dei danni subiti dalla comunità a seguito dell'alluvione </label>
+                              <label> Gravità dei danni subiti dalla comunità a seguito dell'alluvione </label>
                               <select class="form-control" name="flood_grade" id="flood_grade">
                                   <option>Nessun Danno</option>
                                   <option> Danni lievi</option>
@@ -170,7 +194,7 @@
 
 
                           <div class="form-group">
-                                <label> Seleziona la tipologia di modulo di sostegno che verrà consegnato </label>
+                                <label> Tipologie di modulo di sostegno che verranno consegnate </label>
                                     <div class="checkbox" name="help_kit" id="help_kit">
                                       <label>
                                         <input type="checkbox" value> Modulo Tetti
@@ -319,8 +343,13 @@
         e.preventDefault();
 
         var fields = [
+          'country_name',
+          'project_type',
+          'city_name',
+          'project_manager',
           'comunity_name',
           'families_number',
+
         ];
 
         var submittable = true;
@@ -333,6 +362,19 @@
           var input_value = input_field.val();
 
           var input_error = !checkRequiredField(input_value);
+
+          if (input_id == "country_name"){
+            input_error = !checkOnlyLetter(input_value);
+          }
+          if (input_id == "project_type"){
+            input_error = !checkOnlyLetter(input_value);
+          }
+          if (input_id == "city_name"){
+            input_error = !checkOnlyLetter(input_value);
+          }
+          if (input_id == "project_manager"){
+            input_error = !checkOnlyLetter(input_value);
+          }
 
           if(input_id == 'comunity_name'){
             input_error = !checkOnlyLetter(input_value);
