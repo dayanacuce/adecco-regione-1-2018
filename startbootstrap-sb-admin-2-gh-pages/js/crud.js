@@ -15,30 +15,39 @@ function toggleSubmit(enable) {
 
 $("form").on("submit", function(e) {
   e.preventDefault()
+  console.log("Hello from submit");
 
-  resetError("nome")
-  resetError("sede")
-  resetError("programmatori")
-  resetError("pubblicati")
-  resetError("date")
+  var fields = ["name", "office", "published", "date"]
 
   var submittable = true
-  submittable = checkField($('#nome')) && submittable
-  submittable = checkField($('#sede')) && submittable
-  submittable = checkField($('#programmatori')) && submittable
-  submittable = checkField($('#pubblicati')) && submittable
-  submittable = checkField($('#date')) && submittable
+  for (var i = 0; i < fields.length; i++) {
+    var input = fields[i]
+    resetError(input)
 
+    var field = $("#" + input)
+    var value = field.val()
+    var input_error = !checkField(value)
+
+    if (input == "name" || input == "office") {
+      input_error = !checkOnlyLetter(value)
+    }
+
+    if (input_error) {
+      submittable = false
+      field.parent().addClass("has-error")
+    }
+  }
 
   if (submittable) {
-    $("form").submit()
+    $("form")[0].submit()
   }
+
 })
 
 $("form").on("reset", function(e) {
-  resetField($("#nome"))
-  resetField($("#sede"))
-  resetField($("#pubblicati"))
+  resetField($("#name"))
+  resetField($("#office"))
+  resetField($("#published"))
 })
 
 function resetField(field) {
@@ -50,12 +59,12 @@ function resetError(id) {
 }
 
 function checkField(input) {
-    var value = input.val()
-    if (value == "") {
-      input.parent().addClass('has-error')
-      return true
-    }
-    return false
+    return input != ""
+}
+
+function checkOnlyLetter(str) {
+  var re = /^[A-Za-zÀ-ÖØ-öø-žぁ-ゞ0-9\s]+$/
+  return re.test(str)
 }
 
 $('#event_period').datepicker({
