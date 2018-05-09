@@ -77,9 +77,9 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
+                                                <th>Name</th>
+                                                <th>Office</th>
+                                                <th>Prgrammers</th>
                                             </tr>
                                         </thead>
                                         <tbody>
