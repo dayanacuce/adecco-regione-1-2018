@@ -88,7 +88,7 @@
                                             <tbody>
                                               <?php $db = new DbUtils();
                                                     $conn = $db -> getConnection();
-                                                    $stmt = $conn->prepare("SELECT  FROM manga");
+                                                    $stmt = $conn->prepare("SELECT * FROM manga");
                                                     $stmt->execute();
 
                                                     // set the resulting array to associative
