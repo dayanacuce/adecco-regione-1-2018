@@ -62,27 +62,12 @@
                       <h1 class="page-header">Table</h1>
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                 Publisher Table
+                                 Details
                             </div>
                             <!-- /.panel-heading -->
                             <div class="panel-body">
                                 <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Name</th>
-                                                <th>Office</th>
-                                                <th>Prgrammers</th>
-                                                <th>Foundation date</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                          <?php
-                                            include("php/fetch_list.php");
-                                           ?>
-                                        </tbody>
-                                    <!-- </table> -->
+                                  
                                 </div>
                                 <!-- /.table-responsive -->
                             </div>
