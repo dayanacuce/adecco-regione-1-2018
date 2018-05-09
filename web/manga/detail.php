@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Table Form</title>
+    <title>Form Detail</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -62,53 +62,63 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                      <h1 class="page-header">Table Form</h1>
+                      <h1 class="page-header">Details</h1>
                       <div class="row">
                         <div class="col-lg-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    Manga & Anime
-                                </div>
-                                <!-- /.panel-heading -->
-                                <div class="panel-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Manga</th>
-                                                    <th>Author</th>
-                                                    <th>Genre</th>
-                                                    <th>Released Date</th>
-                                                    <th>Frequency</th>
-                                                    <th>Transposition Anime</th>
-                                                    <th>Vote</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                              <?php $db = new DbUtils();
-                                                    $conn = $db -> getConnection();
-                                                    $stmt = $conn->prepare("SELECT manga.id, manga, author, manga_genres.genre, released_date, frequency, anime, vote_anime
-                                                                            FROM manga
-                                                                            INNER JOIN manga_genres ON manga.genre_id = manga_genres.id");
-                                                    $stmt->execute();
-
-                                                    // set the resulting array to associative
-                                                    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                                                    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
-                                                    echo $v;
-                                                    }
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!-- /.table-responsive -->
-                                </div>
-                                <!-- /.panel-body -->
+                          <div class="panel panel-default">
+                            <div class="panel-body text-center">
+                              <h1>One Piece
+                                  <small>by Eiichiro Oda</small>
+                              </h1>
                             </div>
-                            <!-- /.panel -->
+                          </div>
                         </div>
-                        <!-- /.col-lg-6 -->
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-2">
+                          <div class="panel panel-default">
+                              <div class="panel-body">
+                                <p><strong>Genre: </strong>Adventure</p>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-2">
+                          <div class="panel panel-default">
+                              <div class="panel-body">
+                                <p><strong>Released Date: </strong>1997-07-19</p>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-2">
+                          <div class="panel panel-default">
+                              <div class="panel-body">
+                                <p><strong>Frequency: </strong>Weekly</p>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-2">
+                          <div class="panel panel-default">
+                              <div class="panel-body">
+                                <p><strong>Transposition Anime: </strong>Yes</p>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-1">
+                          <div class="panel panel-default">
+                              <div class="panel-body">
+                                <p><strong>Vote: </strong>9</p>
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3">
+                          <div class="panel panel-default">
+                              <div class="panel-body">
+                                <p><strong>Released Date Anime: </strong>1999-10-20</p>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     <!-- /.col-lg-12 -->
                 </div>
