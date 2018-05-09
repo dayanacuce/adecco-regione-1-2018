@@ -7,7 +7,7 @@
   $query -> execute();
 
   $result = $query -> setFetchMode(PDO::FETCH_ASSOC);
-  foreach (new TableRows(new RecursiveArrayIterator($query -> fetchAll())) as $key => $value) {
+  foreach (new TableRows(new RecursiveArrayIterator($query -> fetchAll(), ' ', )) as $key => $value) {
     // code...
     echo $value;
   }

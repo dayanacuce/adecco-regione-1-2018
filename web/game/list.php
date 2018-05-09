@@ -42,7 +42,6 @@
                 <a class="navbar-brand" href="../index.html">SB Admin v2.0</a>
             </div>
             <!-- /.navbar-header -->
-
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
