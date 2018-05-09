@@ -34,6 +34,7 @@
 </head>
 
 <body>
+  <?php include '../php_utils/db_utils.php'; ?>
 
     <div id="wrapper">
 
@@ -85,15 +86,17 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
+                                              <?php $db = new DbUtils();
+                                                    $conn = $db -> getConnection();
+                                                    $stmt = $conn->prepare("SELECT  FROM manga");
+                                                    $stmt->execute();
 
-                                                </tr>
-                                                <tr>
-
-                                                </tr>
-                                                <tr>
-                                                    
-                                                </tr>
+                                                    // set the resulting array to associative
+                                                    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                                                    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+                                                    echo $v;
+                                                    }
+                                                ?>
                                             </tbody>
                                         </table>
                                     </div>
