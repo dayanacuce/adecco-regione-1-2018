@@ -88,7 +88,7 @@
                                           $stmt = $conn->prepare("SELECT alpha2code, name, capital FROM countries");
                                           $stmt->execute();
 
-                                          $commands = '<td><a href="detail.php?id=:alpha2code">dettaglio</a></td>';
+                                          $commands = '<td><a href="detail.php?id={alpha2code}">dettaglio</a></td>';
 
                                           // set the resulting array to associative
                                           $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
