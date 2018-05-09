@@ -88,7 +88,9 @@
                                             <tbody>
                                               <?php $db = new DbUtils();
                                                     $conn = $db -> getConnection();
-                                                    $stmt = $conn->prepare("SELECT id, manga, author, genre_id, original_date, frequency, anime, vote_anime FROM manga");
+                                                    $stmt = $conn->prepare("SELECT manga.id, manga, author, manga_genres.genre, original_date, frequency, anime, vote_anime
+                                                                            FROM manga
+                                                                            INNER JOIN manga_genres ON manga.genre_id = manga_genres.id");
                                                     $stmt->execute();
 
                                                     // set the resulting array to associative
