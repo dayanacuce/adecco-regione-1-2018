@@ -34,6 +34,23 @@
 </head>
 
 <body>
+  <?php
+   include '../php_utils/db_utils.php';
+   $connect = new DbUtils ();
+   $conn= $connect -> getConnection();
+
+   $stmt = $conn->prepare("SELECT id, country_code, project_type, city_name, project_manager, comunity_name, number_of_families, class_transport FROM progetto_cooperazione");
+   $stmt->execute();
+
+    // set the resulting array to associative
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+        echo $v;
+    }
+
+    $conn = null;
+
+    ?>
 
     <div id="wrapper">
 
@@ -67,7 +84,7 @@
                         <form role="form"
                               action="http://adecco.local/post_reader.php"
                               method="post">
-                          <div class="form-group">
+                          <!--<div class="form-group">
                             <label class="control-label" for="firstname">First name</label>
                             <input class="form-control" type="text"
                                    name="firstname" id="firstname" />
@@ -96,7 +113,7 @@
                                   <option value="other">Other</option>
                               </select>
                           </div>
-                          <!-- div class="form-group">
+                            div class="form-group">
                               <label>Sex</label><br />
 
                               <label class="radio-inline">
@@ -108,7 +125,8 @@
                               <label class="radio-inline">
                                   <input type="radio" name="Sex" value="Other">Other
                               </label>
-                          </div -->
+                          </div
+
                           <div class="form-group">
                               <label class="control-label" for="message">Message</label>
                               <textarea  class="form-control" id="message" name="message" rows="5"></textarea>
@@ -120,11 +138,11 @@
                                     <input type="checkbox" id="privacy">Accept privacy and conditions
                                 </label>
 
-                                <!-- Button trigger modal -->
+                                 Button trigger modal
                                 <a class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                                     view conditions
                                 </a>
-                                <!-- Modal -->
+
                                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                   <div class="modal-dialog">
                                     <div class="modal-content">
@@ -139,10 +157,10 @@
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                       </div>
                                     </div>
-                                    <!-- /.modal-content -->
+
                                   </div>
                                 </div>
-                                <!-- /.modal-dialog -->
+
                               </div>
                             </div>
                           </div>
@@ -150,6 +168,7 @@
                             <button type="submit" id="submitBtn" class="btn btn-default" disabled>Submit Button</button>
                             <button type="reset" class="btn btn-default">Reset Button</button>
                           </div>
+                        -->
                           <div class="row">
                               <div class="col-lg-6">
                                   <div class="panel panel-default">
