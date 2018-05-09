@@ -35,89 +35,89 @@
 
 <body>
   <?php include '../php_utils/db_utils.php'; ?>
-
     <div id="wrapper">
+      <!-- Navigation -->
+      <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="../index.html">SB Admin v2.0</a>
+          </div>
+          <!-- /.navbar-header -->
 
-        <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="../index.html">SB Admin v2.0</a>
-            </div>
-            <!-- /.navbar-header -->
+          <div class="navbar-default sidebar" role="navigation">
+              <div class="sidebar-nav navbar-collapse">
+                  <ul class="nav" id="side-menu">
+                      <li>
+                          <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                      </li>
+                  </ul>
+              </div>
+              <!-- /.sidebar-collapse -->
+          </div>
+          <!-- /.navbar-static-side -->
+      </nav>
+      <!-- Page Content -->
+      <div id="page-wrapper">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-lg-12">
+                    <h1 class="page-header">Table Form</h1>
+                    <div class="row">
+                      <div class="col-lg-12">
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  Manga & Anime
+                              </div>
+                              <!-- /.panel-heading -->
+                              <div class="panel-body">
+                                  <div class="table-responsive">
+                                      <table class="table table-striped">
+                                          <thead>
+                                              <tr>
+                                                  <th>#</th>
+                                                  <th>Manga</th>
+                                                  <th>Author</th>
+                                                  <th>Genre</th>
+                                                  <th>Released Date</th>
+                                                  <th>Frequency</th>
+                                                  <th>Anime</th>
+                                                  <th>Vote</th>
+                                                  <th>Detail</th>
+                                              </tr>
+                                          </thead>
+                                          <tbody>
+                                            <?php $db = new DbUtils();
+                                                  $conn = $db -> getConnection();
+                                                  $stmt = $conn->prepare("SELECT manga.id, manga, author, manga_genres.genre, released_date, frequency, anime, vote_anime
+                                                                          FROM manga
+                                                                          INNER JOIN manga_genres ON manga.genre_id = manga_genres.id");
+                                                  $stmt->execute();
 
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" id="side-menu">
-                        <li>
-                            <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
-        <!-- Page Content -->
-        <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                      <h1 class="page-header">Table Form</h1>
-                      <div class="row">
-                        <div class="col-lg-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    Manga & Anime
-                                </div>
-                                <!-- /.panel-heading -->
-                                <div class="panel-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Manga</th>
-                                                    <th>Author</th>
-                                                    <th>Genre</th>
-                                                    <th>Released Date</th>
-                                                    <th>Frequency</th>
-                                                    <th>Transposition Anime</th>
-                                                    <th>Vote</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                              <?php $db = new DbUtils();
-                                                    $conn = $db -> getConnection();
-                                                    $stmt = $conn->prepare("SELECT manga.id, manga, author, manga_genres.genre, released_date, frequency, anime, vote_anime
-                                                                            FROM manga
-                                                                            INNER JOIN manga_genres ON manga.genre_id = manga_genres.id");
-                                                    $stmt->execute();
+                                                  $commands = '<td><a href="detail.php?id=:id">detail</a></td>';
 
-                                                    // set the resulting array to associative
-                                                    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                                                    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
-                                                    echo $v;
-                                                    }
-                                                ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!-- /.table-responsive -->
-                                </div>
-                                <!-- /.panel-body -->
-                            </div>
-                            <!-- /.panel -->
-                        </div>
-                        <!-- /.col-lg-6 -->
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container-fluid -->
-        </div>
-        <!-- /#page-wrapper -->
-
+                                                  // set the resulting array to associative
+                                                  $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                                                  foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll()), '', $commands) as $k=>$v) {
+                                                  echo $v;
+                                                  }
+                                              ?>
+                                          </tbody>
+                                      </table>
+                                  </div>
+                                  <!-- /.table-responsive -->
+                              </div>
+                              <!-- /.panel-body -->
+                          </div>
+                          <!-- /.panel -->
+                      </div>
+                      <!-- /.col-lg-6 -->
+                  </div>
+                  <!-- /.col-lg-12 -->
+              </div>
+              <!-- /.row -->
+          </div>
+          <!-- /.container-fluid -->
+      </div>
+      <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
 
