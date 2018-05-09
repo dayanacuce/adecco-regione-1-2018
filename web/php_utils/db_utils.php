@@ -1,7 +1,7 @@
 <?php
 
 class TableRows extends RecursiveIteratorIterator {
-    function __construct($it, $begin, $end) {
+    function __construct($it, $begin='', $end='') {
         parent::__construct($it, self::LEAVES_ONLY);
 				$this->begin = $begin;
 				$this->end = $end;
