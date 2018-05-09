@@ -31,8 +31,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!--Include php-utils-->
-    <?php include './php_utils/db_utils.php'; ?>
+    <!-- Incude db_utils from php_utils -->
+    <?php include '../php_utils/db_utils.php' ?>
 
 </head>
 
@@ -80,14 +80,33 @@
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>First Name</th>
-                                                        <th>Last Name</th>
-                                                        <th>Username</th>
+                                                        <th>Name</th>
+                                                        <th>Developer</th>
+                                                        <th>Publisher</th>
+                                                        <th>Genre</th>
+                                                        <th>Multyplayer</th>
+                                                        <th>Singleplayer</th>
+                                                        <th>Launch Date</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
 
+                                                  <?php
 
+                                                  $db = new DbUtils();
+
+                                                  $conn = $db -> getConnection();
+                                                  $stmt = $conn->prepare("SELECT id, name, developer, publisher, genre_id, multiplayer, singleplayer, launch_date FROM game");
+
+                                                  $stmt->execute();
+
+                                                  // set the resulting array to associative
+                                                  $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                                                  foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+                                                      echo $v;
+                                                  }
+
+                                                  ?>
 
                                                 </tbody>
                                             </table>
@@ -98,7 +117,9 @@
                                 </div>
                                 <!-- /.panel -->
                             </div>
-
+                            <!-- /.col-lg-6 -->
+                            <!-- CHIUSURA TABELLA STRIPED ROW -->
+                        </div>
                         <br /><br />
                     </div>
                     <!-- /.col-lg-12 -->
