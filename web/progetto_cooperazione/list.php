@@ -182,29 +182,35 @@
                                                   <thead>
                                                       <tr>
                                                           <th>#</th>
-                                                          <th>First Name</th>
-                                                          <th>Last Name</th>
-                                                          <th>Username</th>
+                                                          <th>id</th>
+                                                          <th>country_code</th>
+                                                          <th>project_type</th>
+                                                          <th>city_name</th>
+                                                          <th>project_manager</th>
+                                                          <th>comunity_name</th>
+                                                          <th>number_of_families</th>
+                                                          <th>number_of_families</th>
+                                                          <th>class_transport</th>
                                                       </tr>
                                                   </thead>
                                                   <tbody>
                                                       <tr>
                                                           <td>1</td>
-                                                          <td>Mark</td>
-                                                          <td>Otto</td>
-                                                          <td>@mdo</td>
+                                                          <td></td>
+                                                          <td></td>
+                                                          <td></td>
                                                       </tr>
                                                       <tr>
                                                           <td>2</td>
-                                                          <td>Jacob</td>
-                                                          <td>Thornton</td>
-                                                          <td>@fat</td>
+                                                          <td></td>
+                                                          <td></td>
+                                                          <td></td>
                                                       </tr>
                                                       <tr>
                                                           <td>3</td>
-                                                          <td>Larry</td>
-                                                          <td>the Bird</td>
-                                                          <td>@twitter</td>
+                                                          <td></td>
+                                                          <td></td>
+                                                          <td></td>
                                                       </tr>
                                                   </tbody>
                                               </table>
