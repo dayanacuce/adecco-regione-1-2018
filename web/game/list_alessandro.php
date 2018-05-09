@@ -96,7 +96,12 @@
                                                   $db = new DbUtils();
 
                                                   $conn = $db -> getConnection();
-                                                  $stmt = $conn->prepare("SELECT id, name, developer, publisher, genre_id, multiplayer, singleplayer, launch_date FROM game");
+                                                  $stmt = $conn->prepare(
+                                                  "SELECT game.id, game.name, developer, publishers.name AS publisher, game_genre.name AS genre, multiplayer, singleplayer, launch_date
+                                                   FROM game
+                                                   INNER JOIN game_genre ON game.genre_id = game_genre.id
+                                                   INNER JOIN publishers ON game.publisher_id = publishers.id"
+                                                  );
 
                                                   $stmt->execute();
 
