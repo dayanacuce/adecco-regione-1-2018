@@ -44,12 +44,7 @@
 
     // set the resulting array to associative
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
-        echo $v;
-    }
-
     $conn = null;
-
     ?>
 
     <div id="wrapper">
@@ -173,7 +168,7 @@
                               <div class="col-lg-6">
                                   <div class="panel panel-default">
                                       <div class="panel-heading">
-                                          Kitchen Sink
+                                          Progetto cooperazione
                                       </div>
                                       <!-- /.panel-heading -->
                                       <div class="panel-body">
@@ -194,24 +189,9 @@
                                                       </tr>
                                                   </thead>
                                                   <tbody>
-                                                      <tr>
-                                                          <td>1</td>
-                                                          <td></td>
-                                                          <td></td>
-                                                          <td></td>
-                                                      </tr>
-                                                      <tr>
-                                                          <td>2</td>
-                                                          <td></td>
-                                                          <td></td>
-                                                          <td></td>
-                                                      </tr>
-                                                      <tr>
-                                                          <td>3</td>
-                                                          <td></td>
-                                                          <td></td>
-                                                          <td></td>
-                                                      </tr>
+                                                    <?php foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+                                                        echo $v;
+                                                    } ?>
                                                   </tbody>
                                               </table>
                                           </div>
