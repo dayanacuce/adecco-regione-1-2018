@@ -30,12 +30,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <?php
-      include("web\game\php\fetch_list.php");
-     ?>
-
-
 </head>
 
 <body>
@@ -80,29 +74,15 @@
                                                 <th>Name</th>
                                                 <th>Office</th>
                                                 <th>Prgrammers</th>
+                                                <th>Foundation date</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Larry</td>
-                                                <td>the Bird</td>
-                                                <td>@twitter</td>
-                                            </tr>
+                                          <?php
+                                            include("php/fetch_list.php");
+                                           ?>
                                         </tbody>
-                                    </table>
+                                    <!-- </table> -->
                                 </div>
                                 <!-- /.table-responsive -->
                             </div>
