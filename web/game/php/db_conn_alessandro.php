@@ -23,9 +23,12 @@ $conn = $db -> getConnection();
 
     $stmt->execute();
 
+      //detail page and id passthru
+      $commands = '<td><a href="detail_alessandro(external_php).php?id=:id">dettaglio</a></td>';
+
     // set the resulting array to associative
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll()), '', $commands, 'id') as $k=>$v) {
         echo $v;
     }
   }
