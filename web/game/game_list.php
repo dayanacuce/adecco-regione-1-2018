@@ -28,7 +28,7 @@
 
                                   <?php
 
-                                  include '/game/php/db_conn_alessandro.php';
+                                  include 'game/php/db_conn_alessandro.php';
                                   listTableRow();
 
                                   ?>
