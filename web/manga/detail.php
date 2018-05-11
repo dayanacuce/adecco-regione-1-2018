@@ -31,6 +31,14 @@
 </div>
 
 <div class="row">
+  <!--div class="col-lg-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <img src="https://bit.ly/2KUPl6A"
+          alt="Copertina One Piece Nr.1" style="max-width: 100%;height: auto;"/>
+      </div>
+    </div>
+  </div-->
   <div class="col-lg-2">
     <div class="panel panel-default text-center">
       <div class="panel-body">
