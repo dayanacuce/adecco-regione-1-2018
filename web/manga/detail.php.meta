@@ -1,0 +1,8 @@
+<?php
+
+  $seo_description = 'Manga & Anime';
+  $seo_keywords = 'Manga, Anime';
+  $html_author = 'Marco';
+  $page_title = 'Manga detail';
+
+?>
