@@ -1,8 +1,8 @@
 <?php
 
-  $seo_description = 'Countries';
-  $seo_keywords = 'Country, flags';
-  $html_author = 'Lockit';
-  $page_title = 'Countries list';
+$seo_description = 'Country';
+$seo_keywords = 'Country, flags';
+$html_author = 'Lockit';
+$page_title = 'Country detail';
 
 ?>
