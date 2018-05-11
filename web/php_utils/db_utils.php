@@ -1,14 +1,19 @@
 <?php
 
 class TableRows extends RecursiveIteratorIterator {
-    function __construct($it, $begin, $end) {
+    function __construct($it, $begin='', $end='', $id_key='id') {
         parent::__construct($it, self::LEAVES_ONLY);
 				$this->begin = $begin;
 				$this->end = $end;
+        $this->id_key = $id_key;
+        $this->id = null;
     }
 
     function current() {
-        return "<td>" . parent::current(). "</td>";
+      if(parent::key() == $this->id_key) {
+          $this->id = parent::current();
+      }
+      return "<td>" . parent::current(). "</td>";
     }
 
     function beginChildren() {
@@ -16,7 +21,7 @@ class TableRows extends RecursiveIteratorIterator {
     }
 
     function endChildren() {
-        echo $this->end . "</tr>\n";
+        echo str_replace(":$this->id_key", $this->id,$this->end) . "</tr>\n";
     }
 }
 
