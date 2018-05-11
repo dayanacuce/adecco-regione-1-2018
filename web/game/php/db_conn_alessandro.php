@@ -1,16 +1,17 @@
 <?php
 
-include '../php_utils/db_utils.php'
+  include '../php_utils/db_utils.php';
 
- // new DbUtils object
-$db = new DbUtils();
+   // new DbUtils istance
+  $db = new DbUtils();
 
- // setting up the db connection
-$conn = $db -> getConnection();
+   // setting up the db connection
+  $conn = $db -> getConnection();
+
 
   function listTableRow(){
 
-    //connection recall
+    //using global connection variable
     global $conn;
 
     //SQL query
@@ -35,7 +36,7 @@ $conn = $db -> getConnection();
 
   function detailPageField($id){
 
-    //connection recall
+    //using global connection variable
     global $conn;
 
     //SQL query
@@ -51,7 +52,7 @@ $conn = $db -> getConnection();
 
     // set fetch mode to associative
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    $result = $stmt->fetchAll();
+    $result = $stmt->fetch();
 
     // returning query as array
     return $result;
