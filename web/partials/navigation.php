@@ -19,10 +19,16 @@
                       <a href="/?page=football/table_piermarco.php"><i class="fa fa-futbol fa-fw"></i> Partite</a>
                     </li>
                     <li>
-                      <a href="/?page=matteo_gym/list.php"><i class="fa fa-apple fa-fw"></i> Gym</a>
+                      <a href="/?page=matteo_gym/list.php"><i class="fa fa-weight fa-fw"></i> Gym</a>
                     </li>
                     <li>
-                      <a href="/?page=progetti_cooperazione/list.php"><i class="fa fa-apple fa-fw"></i> Progetto coooperazione</a>
+                      <a href="/?page=progetto_cooperazione/list_cooperazione.php"><i class="fab fa-apple fa-fw"></i> Progetto coooperazione</a>
+                    </li>
+                    <li>
+                      <a href="/?page=game/game_list.php"><i class="fa fa-gamepad fa-fw"></i> Giochi</a>
+                    </li>
+                    <li>
+                      <a href="/?page=manga/list.php"><i class="fab fa-mandalorian fa-fw"></i> Manga</a>
                     </li>
                 </ul>
             </div>

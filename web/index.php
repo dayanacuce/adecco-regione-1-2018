@@ -4,7 +4,7 @@
 
   <?php
 
-    $page = $_GET['page'];
+    $page = isset($_GET['page']) ? $_GET['page'] : null;
     if (!empty($page)) {
       include($page . '.meta');
     }
