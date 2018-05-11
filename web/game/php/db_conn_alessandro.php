@@ -1,6 +1,6 @@
 <?php
 
-  include '../php_utils/db_utils.php';
+  include 'php_utils/db_utils.php';
 
    // new DbUtils istance
   $db = new DbUtils();
