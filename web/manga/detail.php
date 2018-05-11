@@ -2,7 +2,7 @@
 
  $db = new DbUtils();
       $conn = $db -> getConnection();
-      $stmt = $conn->prepare("SELECT manga, author, manga_genres.genre AS genre, released_date, frequency, anime, vote_anime, released_date_anime
+      $stmt = $conn->prepare("SELECT manga, author, manga_genres.genre AS genre, released_date, frequency, cover, anime, vote_anime, released_date_anime
                               FROM manga
                               INNER JOIN manga_genres ON manga.genre_id = manga_genres.id
                               WHERE manga.id='".$_GET['id']."'");
@@ -31,14 +31,14 @@
 </div>
 
 <div class="row">
-  <!--div class="col-lg-4">
+  <div class="col-lg-4">
     <div class="panel panel-default">
       <div class="panel-body">
-        <img src="https://bit.ly/2KUPl6A"
-          alt="Copertina One Piece Nr.1" style="max-width: 100%;height: auto;"/>
+        <img src="<?php echo $manga ['cover'] ?>"
+          alt="Copertina Manga" style="max-width: 100%;height: auto;"/>
       </div>
     </div>
-  </div-->
+  </div>
   <div class="col-lg-2">
     <div class="panel panel-default text-center">
       <div class="panel-body">
@@ -46,7 +46,7 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-2">
+  <div class="col-lg-4">
     <div class="panel panel-default text-center">
       <div class="panel-body">
         <p><strong>Released Date: </strong><?php echo $manga ['released_date'] ?></p>
@@ -67,14 +67,14 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-1">
+  <div class="col-lg-2">
     <div class="panel panel-default text-center">
       <div class="panel-body">
         <p><strong>Vote: </strong><?php echo $manga ['vote_anime'] ?></p>
       </div>
     </div>
   </div>
-  <div class="col-lg-3">
+  <div class="col-lg-4">
     <div class="panel panel-default text-center">
       <div class="panel-body">
         <p><strong>Released Date Anime: </strong><?php echo $manga ['released_date_anime'] ?></p>
