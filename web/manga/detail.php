@@ -35,128 +35,125 @@
 
   <?php $db = new DbUtils();
         $conn = $db -> getConnection();
-        $stmt = $conn->prepare("SELECT *
+        $stmt = $conn->prepare("SELECT manga.id, manga, author, manga_genres.genre, released_date, frequency, anime, vote_anime
                                 FROM manga
                                 INNER JOIN manga_genres ON manga.genre_id = manga_genres.id
                                 WHERE id = ' ".$_GET['id']."'");
         $stmt->execute();
 
+        $commands = '<td><a href="detail.php?id=:id">detail</a></td>';
+
         // set the resulting array to associative
-        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-
-        }
-    ?>
-
+        $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);}
+  ?>
 </head>
 
 <body>
   <div id="wrapper">
-      <!-- Navigation -->
-      <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-          <div class="navbar-header">
-              <a class="navbar-brand" href="../index.html">SB Admin v2.0</a>
-          </div>
-          <!-- /.navbar-header -->
-
-          <div class="navbar-default sidebar" role="navigation">
-              <div class="sidebar-nav navbar-collapse">
-                  <ul class="nav" id="side-menu">
-                      <li>
-                          <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                      </li>
-                  </ul>
-              </div>
-              <!-- /.sidebar-collapse -->
-          </div>
-          <!-- /.navbar-static-side -->
-      </nav>
-      <!-- Page Content -->
-      <div id="page-wrapper">
-          <div class="container-fluid">
-              <div class="row">
-                  <div class="col-lg-12">
-                    <h1 class="page-header">Details</h1>
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="panel panel-default">
-                          <div class="panel-body text-center">
-                            <h1>One Piece
-                                <small>by Eiichiro Oda</small>
-                            </h1>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-2">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                              <p><strong>Genre: </strong>Adventure</p>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-2">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                              <p><strong>Released Date: </strong>1997-07-19</p>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-2">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                              <p><strong>Frequency: </strong>Weekly</p>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-2">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                              <p><strong>Anime: </strong>Yes</p>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-1">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                              <p><strong>Vote: </strong>9</p>
-                            </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-3">
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                              <p><strong>Released Date Anime: </strong>1999-10-20</p>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- /.col-lg-12 -->
-              </div>
-              <!-- /.row -->
-          </div>
-          <!-- /.container-fluid -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="../index.html">SB Admin v2.0</a>
       </div>
-      <!-- /#page-wrapper -->
+      <!-- /.navbar-header -->
+      <div class="navbar-default sidebar" role="navigation">
+          <div class="sidebar-nav navbar-collapse">
+              <ul class="nav" id="side-menu">
+                  <li>
+                      <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                  </li>
+              </ul>
+          </div>
+          <!-- /.sidebar-collapse -->
+      </div>
+        <!-- /.navbar-static-side -->
+    </nav>
+    <!-- Page Content -->
+    <div id="page-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+              <h1 class="page-header">Details</h1>
+            </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="panel panel-default">
+              <div class="panel-body text-center">
+                <h1>One Piece
+                    <small>by Eiichiro Oda</small>
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p><strong>Genre: </strong>Adventure</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p><strong>Released Date: </strong>1997-07-19</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p><strong>Frequency: </strong>Weekly</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p><strong>Anime: </strong>Yes</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-1">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p><strong>Vote: </strong>9</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <p><strong>Released Date Anime: </strong>1999-10-20</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <!-- /.container-fluid -->
     </div>
-    <!-- /#wrapper -->
+    <!-- /#page-wrapper -->
+  </div>
+  <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
+  <!-- jQuery -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
-    <script src="../js/bootstrap-datepicker.min.js"></script>
+  <!-- Metis Menu Plugin JavaScript -->
+  <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+  <script src="../js/bootstrap-datepicker.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script src="../dist/js/sb-admin-2.js"></script>
 
-    <script src="../js/contact_form.js"></script>
+  <script src="../js/contact_form.js"></script>
 </body>
 
 </html>
