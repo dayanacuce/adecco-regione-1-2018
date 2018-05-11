@@ -13,7 +13,16 @@
                       <a href="/index.php"><i class="fa fa-home fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
+                      <a href="/?page=countries/list.php"><i class="fa fa-globe fa-fw"></i> Stati</a>
+                    </li>
+                    <li>
                       <a href="/?page=football/table_piermarco.php"><i class="fa fa-futbol fa-fw"></i> Partite</a>
+                    </li>
+                    <li>
+                      <a href="/?page=matteo_gym/list.php"><i class="fa fa-apple fa-fw"></i> Gym</a>
+                    </li>
+                    <li>
+                      <a href="/?page=progetti_cooperazione/list.php"><i class="fa fa-apple fa-fw"></i> Progetto coooperazione</a>
                     </li>
                 </ul>
             </div>
