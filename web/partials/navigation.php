@@ -13,7 +13,7 @@
                       <a href="/index.php"><i class="fa fa-home fa-fw"></i> Dashboard</a>
                     </li>
                     <li>
-                      <a href="/?page=football/list.php"><i class="fa fa-futbol fa-fw"></i> Partite</a>
+                      <a href="/?page=football/table_piermarco.php"><i class="fa fa-futbol fa-fw"></i> Partite</a>
                     </li>
                 </ul>
             </div>
