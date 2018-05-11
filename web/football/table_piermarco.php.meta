@@ -1,0 +1,8 @@
+<?php
+
+  $seo_description = 'football';
+  $seo_keywords = '';
+  $html_author = 'Piermarco';
+  $page_title = 'Lista Partite';
+
+?>
