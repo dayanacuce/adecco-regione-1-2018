@@ -34,7 +34,7 @@
 </head>
 
 <body>
-  <?php include '../php_utils/db_utils.php'; ?>
+
     <div id="wrapper">
       <!-- Navigation -->
       <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -81,23 +81,25 @@
                                                   <th>Frequency</th>
                                                   <th>Anime</th>
                                                   <th>Vote</th>
+                                                  <th>Released Date Anime</th>
                                                   <th>Detail</th>
                                               </tr>
                                           </thead>
                                           <tbody>
-                                            <?php $db = new DbUtils();
+                                            <?php include '../php_utils/db_utils.php';
+                                                  $db = new DbUtils();  //
                                                   $conn = $db -> getConnection();
-                                                  $stmt = $conn->prepare("SELECT manga.id, manga, author, manga_genres.genre, released_date, frequency, anime, vote_anime
+                                                  $stmt = $conn->prepare("SELECT manga.id, manga, author, manga_genres.genre, released_date, frequency, anime, vote_anime, released_date_anime
                                                                           FROM manga
                                                                           INNER JOIN manga_genres ON manga.genre_id = manga_genres.id");
-                                                  $stmt->execute();
+                                                  $stmt->execute(); //richiamo il metodo execute che esegue la query
 
                                                   $commands = '<td><a href="detail.php?id=:id">detail</a></td>';
 
                                                   // set the resulting array to associative
-                                                  $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                                                  foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll()), '', $commands) as $k=>$v) {
-                                                  echo $v;
+                                                  $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); //fetch assoc associa i nomi dei campi ai dati che estrae
+                                                  foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll()), '', $commands) as $k=>$v) {  //fetch all restituisce tutti i record con tutti i campi
+                                                  echo $v;                                                                                          //' ' è l'inizio della liena - $commands è la fine della linea
                                                   }
                                               ?>
                                           </tbody>
