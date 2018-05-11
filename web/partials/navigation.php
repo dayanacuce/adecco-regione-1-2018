@@ -10,7 +10,10 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                      <a href="/index.php"><i class="fa fa-home fa-fw"></i> Dashboard</a>
+                    </li>
+                    <li>
+                      <a href="/?page=football/table_piermarco.php"><i class="fa fa-futbol fa-fw"></i> Partite</a>
                     </li>
                 </ul>
             </div>
