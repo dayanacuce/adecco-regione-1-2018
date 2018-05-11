@@ -5,9 +5,6 @@
                     <div class="col-lg-12">
                         <h1 class="page-header">Contact form</h1>
 
-                        <form role="form"
-                              action="http://adecco.local/post_reader.php"
-                              method="post">
 
                           <div class="row">
                               <div class="col-lg-6">
@@ -48,8 +45,9 @@
                                                         // set the resulting array to associative
                                                         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-                                                        foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll()), '', $commands, id) as $k=>$v) {
-                                                            echo $v
+                                                        foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll()), '', $commands) as $k=>$v) {
+                                                            echo $v;
+                                                          }
                                                         ?>
 
 
@@ -63,7 +61,6 @@
                                   </div>
                                   <!-- /.panel -->
                               </div>
-                        </form>
                         <br /><br />
                     </div>
                     <!-- /.col-lg-12 -->
