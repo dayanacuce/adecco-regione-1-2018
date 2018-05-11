@@ -18,15 +18,15 @@
                                                   <thead>
                                                       <tr>
                                                           <th>#</th>
-                                                          <th>id</th>
+
                                                           <th>country_code</th>
                                                           <th>project_type</th>
                                                           <th>city_name</th>
                                                           <th>project_manager</th>
                                                           <th>comunity_name</th>
                                                           <th>number_of_families</th>
-                                                          <th>number_of_families</th>
                                                           <th>class_transport</th>
+                                                          <th>dettaglio</th>
                                                       </tr>
                                                   </thead>
                                                   <tbody>
@@ -39,12 +39,12 @@
                                                        $stmt = $conn->prepare("SELECT id, country_code, project_type, city_name, project_manager, comunity_name, number_of_families, class_transport FROM progetto_cooperazione");
                                                        $stmt->execute();
 
-                                                       $commands = '<td><a href="/?page=progetto_cooperazione/dettaglio_cooperazione.php&id=:id>dettaglio</a></td>';
+                                                       $commands = '<td><a href="/?page=progetto_cooperazione/dettaglio_cooperazione.php&id=:id">dettaglio</a></td>';
 
                                                         // set the resulting array to associative
                                                         $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
 
-                                                        foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll()), '', $commands) as $k=>$v) {
+                                                        foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll()), '', $commands, 'id') as $k=>$v) {
                                                             echo $v;
                                                           }
                                                         ?>
