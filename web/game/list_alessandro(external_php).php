@@ -30,6 +30,14 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- Incude db_utils from php_utils -->
+    <?php
+
+    include 'php/db_conn_alessandro.php';
+
+    ?>
+
 </head>
 
 <body>
@@ -42,6 +50,7 @@
                 <a class="navbar-brand" href="../index.html">SB Admin v2.0</a>
             </div>
             <!-- /.navbar-header -->
+
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
@@ -54,48 +63,66 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
-              <!-- Page Content -->
-              <div id="page-wrapper">
-                <div class="row">
-                    <div class="col-lg-6">
-                      <h1 class="page-header">Table</h1>
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                 Publisher Table
-                            </div>
-                            <!-- /.panel-heading -->
-                            <div class="panel-body">
-                                <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Name</th>
-                                                <th>Office</th>
-                                                <th>Prgrammers</th>
-                                                <th>Foundation date</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                          <?php
-                                            include("php/fetch_list.php");
-                                           ?>
-                                        </tbody>
-                                    <!-- </table> -->
-                                </div>
-                                <!-- /.table-responsive -->
-                            </div>
-                            <!-- /.panel-body -->
-                        </div>
-                        <!-- /.panel -->
-                    </div>
 
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Contact form</h1>
+
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        Striped Rows
+                                    </div>
+                                    <!-- /.panel-heading -->
+                                    <div class="panel-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Name</th>
+                                                        <th>Developer</th>
+                                                        <th>Publisher</th>
+                                                        <th>Genre</th>
+                                                        <th>Multyplayer</th>
+                                                        <th>Singleplayer</th>
+                                                        <th>Launch Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                  <?php
+
+                                                  listTableRow();
+
+                                                  ?>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <!-- /.table-responsive -->
+                                    </div>
+                                    <!-- /.panel-body -->
+                                </div>
+                                <!-- /.panel -->
+                            </div>
+                            <!-- /.col-lg-6 -->
+                            <!-- CHIUSURA TABELLA STRIPED ROW -->
+                        </div>
+                        <br /><br />
+                    </div>
+                    <!-- /.col-lg-12 -->
                 </div>
                 <!-- /.row -->
             </div>
             <!-- /.container-fluid -->
         </div>
         <!-- /#page-wrapper -->
+
     </div>
     <!-- /#wrapper -->
 
