@@ -42,42 +42,42 @@
   <div class="col-lg-2">
     <div class="panel panel-default text-center">
       <div class="panel-body">
-        <p><strong>Genre: </strong><?php echo $manga ['genre'] ?></p>
+        <strong>Genre: </strong><?php echo $manga ['genre'] ?>
       </div>
     </div>
   </div>
   <div class="col-lg-4">
     <div class="panel panel-default text-center">
       <div class="panel-body">
-        <p><strong>Released Date: </strong><?php echo $manga ['released_date'] ?></p>
+        <strong>Released Date: </strong><?php echo $manga ['released_date'] ?>
       </div>
     </div>
   </div>
   <div class="col-lg-2">
     <div class="panel panel-default text-center">
       <div class="panel-body">
-        <p><strong>Frequency: </strong><?php echo $manga ['frequency'] ?></p>
+        <strong>Frequency: </strong><?php echo $manga ['frequency'] ?>
       </div>
     </div>
   </div>
   <div class="col-lg-2">
     <div class="panel panel-default text-center">
       <div class="panel-body">
-        <p><strong>Anime: </strong><?php echo $manga ['anime'] ?></p>
+        <strong>Anime: </strong><?php echo $manga ['anime'] ?>
       </div>
     </div>
   </div>
   <div class="col-lg-2">
     <div class="panel panel-default text-center">
       <div class="panel-body">
-        <p><strong>Vote: </strong><?php echo $manga ['vote_anime'] ?></p>
+        <strong>Vote: </strong><?php echo $manga ['vote_anime'] ?>
       </div>
     </div>
   </div>
   <div class="col-lg-4">
     <div class="panel panel-default text-center">
       <div class="panel-body">
-        <p><strong>Released Date Anime: </strong><?php echo $manga ['released_date_anime'] ?></p>
+        <strong>Released Date Anime: </strong><?php echo $manga ['released_date_anime'] ?>
       </div>
     </div>
   </div>
