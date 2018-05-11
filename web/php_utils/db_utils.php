@@ -27,8 +27,6 @@ class TableRows extends RecursiveIteratorIterator {
 
 class DbUtils{
 
-  include 'filename';
-
   function DbUtils(){}
 
   function getConnection(){
