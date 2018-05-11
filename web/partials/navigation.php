@@ -22,7 +22,7 @@
                       <a href="/?page=matteo_gym/list.php"><i class="fa fa-apple fa-fw"></i> Gym</a>
                     </li>
                     <li>
-                      <a href="/?page=progetti_cooperazione/list.php"><i class="fa fa-apple fa-fw"></i> Progetto coooperazione</a>
+                      <a href="/?page=progetti_cooperazione/list_cooperazione.php"><i class="fa fa-apple fa-fw"></i> Progetto coooperazione</a>
                     </li>
                 </ul>
             </div>
