@@ -23,7 +23,7 @@
   <body>
 
         <div id="wrapper">
-            <?php include 'partials/navigation.php' ?> 
+            <?php include 'partials/navigation.php' ?>
 
             <!-- Page Content -->
             <div id="page-wrapper">
@@ -31,10 +31,9 @@
                   <?php
                   	if (!empty($page)) {
                   		include($page);
-                  	}
-                  	else {
-                  		include('404.php');
-                  	}
+                  	}else{
+                      echo '<- scegli una pagina';
+                    }
                   ?>
                 </div>
                 <!-- /.container-fluid -->
