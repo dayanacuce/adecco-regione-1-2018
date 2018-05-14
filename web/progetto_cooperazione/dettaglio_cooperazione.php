@@ -3,7 +3,7 @@
    $connect = new DbUtils ();
    $conn= $connect -> getConnection();
 
-   $stmt = $conn->prepare("SELECT* FROM progetto_cooperazione WHERE id ='".$_GET[id]."'");
+   $stmt = $conn->prepare("SELECT* FROM progetto_cooperazione WHERE id ='".$_GET['id']."'");
    $stmt->execute();
 
     // set the resulting array to associative
@@ -20,7 +20,7 @@
                         </div>
 
                             <div class="row">
-                                <div class="col-lg-3 col-md-6">
+                                <div class="col-lg-2 col-md-4">
                                     <div class="panel panel-primary">
                                         <div class="panel-heading">
                                             <div class="row">
@@ -37,7 +37,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 col-md-6">
+                                <div class="col-lg-2 col-md-4">
                                     <div class="panel panel-primary">
                                         <div class="panel-heading">
                                             <div class="row">
@@ -54,7 +54,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 col-md-6">
+                                <div class="col-lg-2 col-md-4">
                                     <div class="panel panel-primary">
                                         <div class="panel-heading">
                                             <div class="row">
@@ -71,7 +71,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 col-md-6">
+                                <div class="col-lg-2 col-md-4">
                                     <div class="panel panel-primary">
                                         <div class="panel-heading">
                                             <div class="row">
@@ -92,7 +92,8 @@
 
 
                                <div class="row">
-                                <div class="col-lg-3 col-md-6">
+                               <div class= "col-lg-12">
+                                <div class="col-lg-2 col-md-4">
                                     <div class="panel panel-green">
                                         <div class="panel-heading">
                                             <div class="row">
@@ -111,7 +112,7 @@
 
 
 
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-lg-2 col-md-4">
                                 <div class="panel panel-green">
                                     <div class="panel-heading">
                                         <div class="row">
@@ -129,7 +130,7 @@
                             </div>
 
 
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-2 col-md-4">
                             <div class="panel panel-green">
                                 <div class="panel-heading">
                                     <div class="row">
@@ -146,3 +147,4 @@
                             </div>
                           </div>
                       </div>
+                    </div>
