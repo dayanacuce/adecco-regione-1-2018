@@ -9,9 +9,19 @@
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-      $stmt = $conn->prepare("INSERT INTO manga (manga, author, genre_id, released_date, frequency, cover, anime, vote_anime, released_date_anime
-                              VALUES ());
-      $stmt->execute();
+      $stmt = $conn->prepare("INSERT INTO manga (manga, author, genre_id, released_date, frequency, cover, anime, vote_anime, released_date_anime)
+        VALUES (:alpha2Code, :name, :capital, :population, :flag)");
+        $stmt->bindParam(':alpha2Code', $alpha2Code);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':capital', $capital);
+        $stmt->bindParam(':population', $population);
+        $stmt->bindParam(':flag', $flag);
+
+        include('form_controls.php');
+
+        if(!$formError){
+          $stmt->execute();
+        }
 
 ?>
 
