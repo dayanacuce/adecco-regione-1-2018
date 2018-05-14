@@ -42,12 +42,7 @@
       height: 300px;
       background: #ffffff;
       padding: 0.3%;
+      margin: 1%;
       float: left;
-    }
-
-    gameDetailBoarderbox{
-      background: #ffffff;
-      padding: 0.3%;
-      margin: 3%;
     }
     </style>
