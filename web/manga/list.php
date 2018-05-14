@@ -17,11 +17,7 @@
                       <th>Manga</th>
                       <th>Author</th>
                       <th>Genre</th>
-                      <th>Released Date</th>
-                      <th>Frequency</th>
                       <th>Anime</th>
-                      <th>Vote</th>
-                      <th>Released Date Anime</th>
                       <th>Detail</th>
                   </tr>
                 </thead>
@@ -29,7 +25,7 @@
                   <?php include 'php_utils/db_utils.php';
                     $db = new DbUtils();  //
                     $conn = $db -> getConnection();
-                    $stmt = $conn->prepare("SELECT manga.id, manga, author, manga_genres.genre, released_date, frequency, anime, vote_anime, released_date_anime
+                    $stmt = $conn->prepare("SELECT manga.id, manga, author, manga_genres.genre, anime
                                             FROM manga
                                             INNER JOIN manga_genres ON manga.genre_id = manga_genres.id");
                     $stmt->execute(); //richiamo il metodo execute che esegue la query
