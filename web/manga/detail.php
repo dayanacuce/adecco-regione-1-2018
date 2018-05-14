@@ -13,13 +13,13 @@
       $manga = $stmt->fetch();  //fetch restituisce un record compresi di tutti i campi
 ?>
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <h1 class="page-header">Details</h1>
   </div>
 </div>
 
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="panel panel-default">
       <div class="panel-body text-center">
         <h1><?php echo $manga ['manga'] ?>
@@ -31,7 +31,7 @@
 </div>
 
 <div class="row">
-  <div class="col-lg-4">
+  <div class="col-lg-4 col-md-5">
     <div class="panel panel-default">
       <div class="panel-body">
         <img src="<?php echo $manga ['cover'] ?>"
@@ -39,45 +39,87 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-2">
-    <div class="panel panel-default text-center">
+  <div class="col-lg-8 col-md-7">
+    <div class="panel panel-default">
       <div class="panel-body">
-        <strong>Genre: </strong><?php echo $manga ['genre'] ?>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;">
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px; padding-right:0px;">
+            <strong>Genre: </strong>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
+            <?php echo $manga ['genre'] ?>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-lg-4">
-    <div class="panel panel-default text-center">
+  <div class="col-lg-8 col-md-7">
+    <div class="panel panel-default">
       <div class="panel-body">
-        <strong>Released Date: </strong><?php echo $manga ['released_date'] ?>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;">
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px; padding-right:0px;">
+            <strong>Released Date: </strong>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
+            <?php echo $manga ['released_date'] ?>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-lg-2">
-    <div class="panel panel-default text-center">
+  <div class="col-lg-8 col-md-7">
+    <div class="panel panel-default">
       <div class="panel-body">
-        <strong>Frequency: </strong><?php echo $manga ['frequency'] ?>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;">
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px; padding-right:0px;">
+            <strong>Frequency: </strong>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
+            <?php echo $manga ['frequency'] ?>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-lg-2">
-    <div class="panel panel-default text-center">
+  <div class="col-lg-8 col-md-7">
+    <div class="panel panel-default">
       <div class="panel-body">
-        <strong>Anime: </strong><?php echo $manga ['anime'] ?>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;">
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px; padding-right:0px;">
+            <strong>Anime: </strong>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
+            <?php echo $manga ['anime'] ?>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-lg-2">
-    <div class="panel panel-default text-center">
+  <div class="col-lg-8 col-md-7">
+    <div class="panel panel-default">
       <div class="panel-body">
-        <strong>Vote: </strong><?php echo $manga ['vote_anime'] ?>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;">
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px; padding-right:0px;">
+            <strong>Vote: </strong>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
+            <?php echo $manga ['vote_anime'] ?>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col-lg-4">
-    <div class="panel panel-default text-center">
+  <div class="col-lg-8 col-md-7">
+    <div class="panel panel-default">
       <div class="panel-body">
-        <strong>Released Date Anime: </strong><?php echo $manga ['released_date_anime'] ?>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px; padding-right:0px;">
+          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px; padding-right:0px;">
+            <strong>Released Date Anime: </strong>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
+            <?php echo $manga ['released_date_anime'] ?>
+          </div>
+        </div>
       </div>
     </div>
   </div>
