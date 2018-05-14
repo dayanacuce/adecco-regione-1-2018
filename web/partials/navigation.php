@@ -30,6 +30,9 @@
                     <li>
                       <a href="/?page=manga/list.php"><i class="fab fa-mandalorian fa-fw"></i> Manga</a>
                     </li>
+                    <li>
+                      <a href="/?page=publishers/list.php"><i class="fab fa-app-store-ios"></i> Publishers</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->
