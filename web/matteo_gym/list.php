@@ -1,6 +1,6 @@
 <div class="row">
 <div class="col-lg-12">
-<h1 class="page-header">Gyms list</h1>
+<h1 class="page-header">gym list</h1>
 
 <div class="row">
 <div class="col-lg-6">
