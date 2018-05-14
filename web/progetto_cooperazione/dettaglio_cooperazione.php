@@ -3,7 +3,7 @@
    $connect = new DbUtils ();
    $conn= $connect -> getConnection();
 
-   $stmt = $conn->prepare("SELECT* FROM progetto_cooperazione WHERE id ='".$_GET[id]."'");
+   $stmt = $conn->prepare("SELECT* FROM progetto_cooperazione WHERE id ='".$_GET["id"]."'");
    $stmt->execute();
 
     // set the resulting array to associative
@@ -20,13 +20,15 @@
                         </div>
 
                             <div class="row">
-                                <div class="col-lg-3 col-md-6">
+                              <div class= "col-lg-12">
+                                <div class="col-lg-3 col-md-3">
                                     <div class="panel panel-primary">
                                         <div class="panel-heading">
                                             <div class="row">
                                                 <div class="col-xs-3">
                                                 </div>
                                                 <div class="col-xs-9 text-right">
+                                                  <i class="fas fa-map-marker-alt"></i>
                                                     <div class="huge"> <?php echo $progetto_cooperazione['country_code']; ?> </div>
                                                     <div>Paese d'intervento</div>
                                                 </div>
@@ -37,7 +39,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 col-md-6">
+                                <div class="col-lg-3 col-md-3">
                                     <div class="panel panel-primary">
                                         <div class="panel-heading">
                                             <div class="row">
@@ -54,7 +56,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 col-md-6">
+                                <div class="col-lg-3 col-md-3">
                                     <div class="panel panel-primary">
                                         <div class="panel-heading">
                                             <div class="row">
@@ -71,7 +73,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-lg-3 col-md-6">
+                                <div class="col-lg-3 col-md-3">
                                     <div class="panel panel-primary">
                                         <div class="panel-heading">
                                             <div class="row">
@@ -87,12 +89,14 @@
                                         </a>
                                     </div>
                                 </div>
+                              </div>
 
 
 
 
                                <div class="row">
-                                <div class="col-lg-3 col-md-6">
+                                <div class= "col-lg-12">
+                                 <div class="col-lg-3 col-md-4">
                                     <div class="panel panel-green">
                                         <div class="panel-heading">
                                             <div class="row">
@@ -111,7 +115,7 @@
 
 
 
-                            <div class="col-lg-3 col-md-6">
+                            <div class="col-lg-3 col-md-4">
                                 <div class="panel panel-green">
                                     <div class="panel-heading">
                                         <div class="row">
@@ -129,7 +133,7 @@
                             </div>
 
 
-                        <div class="col-lg-3 col-md-6">
+                        <div class="col-lg-3 col-md-4">
                             <div class="panel panel-green">
                                 <div class="panel-heading">
                                     <div class="row">
@@ -146,3 +150,4 @@
                             </div>
                           </div>
                       </div>
+                    </div>
