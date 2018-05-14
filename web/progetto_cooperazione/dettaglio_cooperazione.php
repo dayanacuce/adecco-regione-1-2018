@@ -27,6 +27,7 @@
                                                 <div class="col-xs-3">
                                                 </div>
                                                 <div class="col-xs-9 text-right">
+                                                  <i class="fas fa-map-marker-alt"></i>
                                                     <div class="huge"> <?php echo $progetto_cooperazione['country_code']; ?> </div>
                                                     <div>Paese d'intervento</div>
                                                 </div>
