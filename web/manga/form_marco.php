@@ -18,10 +18,10 @@
       <div class="form-group <?php if($genre_idErr != '') echo 'has-error'; ?>">
         <label class="control-label" for="genre_id">Genre: *</label>
         <select name="genre_id" class="form-control" id="genre_id" value="<?php echo $genre_id;?>">
-          <option value=""  <?php if($_POST['genre_id'] == '')  echo 'selected="selected"' ?> >Selezionare: - - -</option>
-          <option value="1" <?php if($_POST['genre_id'] == '1') echo 'selected="selected"' ?> >Arti Marziali</option>
-          <option value="2" <?php if($_POST['genre_id'] == '2') echo 'selected="selected"' ?> >Avventura</option>
-          <option value="3" <?php if($_POST['genre_id'] == '3') echo 'selected="selected"' ?> >Azione</option>
+          <option value=""  <?php if(isset($_POST['genre_id']) && $_POST['genre_id'] == '')  echo 'selected="selected"' ?> >Selezionare: - - -</option>
+          <option value="1" <?php if(isset($_POST['genre_id']) && $_POST['genre_id'] == '1') echo 'selected="selected"' ?> >Arti Marziali</option>
+          <option value="2" <?php if(isset($_POST['genre_id']) && $_POST['genre_id'] == '2') echo 'selected="selected"' ?> >Avventura</option>
+          <option value="3" <?php if(isset($_POST['genre_id']) && $_POST['genre_id'] == '3') echo 'selected="selected"' ?> >Azione</option>
         </select>
         <p class="help-block"> <?php echo $genre_idErr;?></p>
       </div>
@@ -40,10 +40,10 @@
       <div class="form-group <?php if($frequencyErr != '') echo 'has-error'; ?>">
         <label class="control-label" for="frequency">Frequency: *</label>
         <select name="frequency" class="form-control" id="frequency" value="<?php echo $frequency;?>">
-          <option value=""            <?php if($_POST['frequency'] == '')            echo 'selected="selected"' ?> >Selezionare: - - -</option>
-          <option value="Weekly"      <?php if($_POST['frequency'] == 'Weekly')      echo 'selected="selected"' ?> >Weekly</option>
-          <option value="Monthly"     <?php if($_POST['frequency'] == 'Monthly')     echo 'selected="selected"' ?> >Monthly</option>
-          <option value="Three-month" <?php if($_POST['frequency'] == 'Three-month') echo 'selected="selected"' ?> >Three-month</option>
+          <option value=""            <?php if(isset($_POST['frequency']) && $_POST['frequency'] == '')            echo 'selected="selected"' ?> >Selezionare: - - -</option>
+          <option value="Weekly"      <?php if(isset($_POST['frequency']) && $_POST['frequency'] == 'Weekly')      echo 'selected="selected"' ?> >Weekly</option>
+          <option value="Monthly"     <?php if(isset($_POST['frequency']) && $_POST['frequency'] == 'Monthly')     echo 'selected="selected"' ?> >Monthly</option>
+          <option value="Three-month" <?php if(isset($_POST['frequency']) && $_POST['frequency'] == 'Three-month') echo 'selected="selected"' ?> >Three-month</option>
         </select>
         <p class="help-block"> <?php echo $frequencyErr;?></p>
       </div>
@@ -64,17 +64,17 @@
       <div class="form-group <?php if($vote_animeErr != '') echo 'has-error'; ?>" id="slide_vote" style="display: none;">
         <label class="control-label" for="vote_anime">Anime Vote: *</label>
         <select name="vote_anime" class="form-control" id="vote_anime" disabled value="<?php echo $vote_anime;?>">   <!-- disabled attributo di default di html degli input che disabilità il campo -->
-          <option value=""   <?php if($_POST['vote_anime'] == '')   echo 'selected="selected"' ?> >Selezionare: - - -</option>
-          <option value="1"  <?php if($_POST['vote_anime'] == '1')  echo 'selected="selected"' ?> >1</option>
-          <option value="2"  <?php if($_POST['vote_anime'] == '2')  echo 'selected="selected"' ?> >2</option>
-          <option value="3"  <?php if($_POST['vote_anime'] == '3')  echo 'selected="selected"' ?> >3</option>
-          <option value="4"  <?php if($_POST['vote_anime'] == '4')  echo 'selected="selected"' ?> >4</option>
-          <option value="5"  <?php if($_POST['vote_anime'] == '5')  echo 'selected="selected"' ?> >5</option>
-          <option value="6"  <?php if($_POST['vote_anime'] == '6')  echo 'selected="selected"' ?> >6</option>
-          <option value="7"  <?php if($_POST['vote_anime'] == '7')  echo 'selected="selected"' ?> >7</option>
-          <option value="8"  <?php if($_POST['vote_anime'] == '8')  echo 'selected="selected"' ?> >8</option>
-          <option value="9"  <?php if($_POST['vote_anime'] == '9')  echo 'selected="selected"' ?> >9</option>
-          <option value="10" <?php if($_POST['vote_anime'] == '10') echo 'selected="selected"' ?>>10</option>
+          <option value=""   <?php if(isset($_POST['vote_anime']) && $_POST['vote_anime'] == '')   echo 'selected="selected"' ?> >Selezionare: - - -</option>
+          <option value="1"  <?php if(isset($_POST['vote_anime']) && $_POST['vote_anime'] == '1')  echo 'selected="selected"' ?> >1</option>
+          <option value="2"  <?php if(isset($_POST['vote_anime']) && $_POST['vote_anime'] == '2')  echo 'selected="selected"' ?> >2</option>
+          <option value="3"  <?php if(isset($_POST['vote_anime']) && $_POST['vote_anime'] == '3')  echo 'selected="selected"' ?> >3</option>
+          <option value="4"  <?php if(isset($_POST['vote_anime']) && $_POST['vote_anime'] == '4')  echo 'selected="selected"' ?> >4</option>
+          <option value="5"  <?php if(isset($_POST['vote_anime']) && $_POST['vote_anime'] == '5')  echo 'selected="selected"' ?> >5</option>
+          <option value="6"  <?php if(isset($_POST['vote_anime']) && $_POST['vote_anime'] == '6')  echo 'selected="selected"' ?> >6</option>
+          <option value="7"  <?php if(isset($_POST['vote_anime']) && $_POST['vote_anime'] == '7')  echo 'selected="selected"' ?> >7</option>
+          <option value="8"  <?php if(isset($_POST['vote_anime']) && $_POST['vote_anime'] == '8')  echo 'selected="selected"' ?> >8</option>
+          <option value="9"  <?php if(isset($_POST['vote_anime']) && $_POST['vote_anime'] == '9')  echo 'selected="selected"' ?> >9</option>
+          <option value="10" <?php if(isset($_POST['vote_anime']) && $_POST['vote_anime'] == '10') echo 'selected="selected"' ?>>10</option>
         </select>
         <p class="help-block"> <?php echo $vote_animeErr;?></p>
       </div>
