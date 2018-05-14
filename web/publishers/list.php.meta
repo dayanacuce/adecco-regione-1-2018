@@ -1,0 +1,8 @@
+<?php
+
+$seo_description = 'Publishers';
+$seo_keywords = 'Publishers, list';
+$html_author = 'Patrick J.';
+$page_title = 'Publishers list';
+
+?>
