@@ -3,39 +3,40 @@ include 'php_utils/db_utils.php';
 
 $db_utils = new DbUtils();
 $conn = $db_utils->getConnection();
-$stmt = $conn->prepare("SELECT * FROM countries WHERE alpha2code='".$_GET['alpha2code']."'");
+$stmt = $conn->prepare("SELECT * FROM campionato WHERE id='".$_GET['id']."'");
 $stmt->execute();
 $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-$country = $stmt->fetch();
-  ?>
+$campionato = $stmt->fetch();
+?>
 
 <div class="row">
 <div class="col-lg-12">
-    <h1 class="page-header"><?php echo $country['name'] ?></h1>
+    <h1 class="page-header"><?php echo $campionato['name'] ?></h1>
 
     <div class="row">
         <div class="col-lg-3 col-md-6">
-            <div class="panel panel-primary">
+            <div class="panel">
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-user fa-5x"></i>
+                          
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge"><?php echo $country['population']; ?></div>
-                            <div>Population</div>
+                            <div class="huge"><?php echo $campionato['Team1']; ?></div>
+                            <div>Team1</div>
                         </div>
                     </div>
                 </div>
               </div>
             </div>
             <div class="col-lg-3 col-md-6">
-              <div class="panel panel-default">
+              <div class="panel">
                 <div class="panel-heading">
-                  Capital: <?php echo $country['capital']; ?>
+                  <div>Team2</div>
+                   <?php echo $campionato['Team2']; ?>
                 </div>
                 <div class="panel-body">
-                  <img src="<?php echo $country['flag']; ?>" style="width: 100%;"/>
+                  <img src="<?php echo $campionato['stemma']; ?>" style="width: 100%;"/>
                 </div>
             </div>
             </div>

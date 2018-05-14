@@ -3,7 +3,7 @@
         <h1 class="page-header">Campionato</h1>
         <div class="panel panel-default">
             <div class="panel-heading">
-                list
+                <h3 align= "center">Risultati partite</h3>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">
@@ -39,6 +39,7 @@
                           ?>
                         </tbody>
                     </table>
+                    <a href = 'football/insert.php' class = 'btn btn-default'> insert </a>
                 </div>
                 <!-- /.table-responsive -->
             </div>

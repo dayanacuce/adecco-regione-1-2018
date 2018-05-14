@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Form email</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="../index.html">SB Admin v2.0</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="../index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h1 class="page-header">Contact form</h1>
+                        <form role="form" action="http://adecco.local/sendmail.php" method="post">
+                          <div class="form-group">
+                            <label class="control-label" for="firstname">First Name:</label>      <!--for indica l'id per cui fare il controllo-->
+                            <input class="form-control" name="firstname" id="firstname" placeholder="First Name">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="control-label" for="lastname">Last Name:</label>
+                            <input class="form-control" name="lastname" id="lastname" placeholder="Last Name">
+                          </div>
+
+                          <div class="form-group">
+                            <label class="control-label" for="email">Email:</label>
+                            <input class="form-control" name="email" type="email" id="email" placeholder="example@email.it">
+                          </div>
+
+                          <div class="form-group">
+                              <label>Sex</label>
+                              <select name="sex" class="form-control">
+                                  <option value="male">Male</option>
+                                  <option value="female">Female</option>
+                                  <option value="other">Other</option>
+
+                              </select>
+                          </div>
+
+                          <!-- div class="form-group">
+                            <label>Sex</label><br>
+                              <div class="radio-inline">
+                                  <label>
+                                      <input type="radio" name="sex" value="Male" checked>Male
+                                  </label>
+                              </div>
+                              <div class="radio-inline">
+                                  <label>
+                                      <input type="radio" name="sex" value="Female">Female
+                                  </label>
+                              </div>
+                              <div class="radio-inline">
+                                  <label>
+                                      <input type="radio" name="sex" value="Other">Other
+                                  </label>
+                              </div>
+                          </div -->
+
+                          <div class="form-group">
+                            <label class="control-label" for="message">Message:</label>
+                            <textarea class="form-control" name="message" id="message" rows="8"></textarea>
+                          </div>
+
+                          <div class="form-group">
+                            <div class="checkbox">
+                              <label>
+                                  <input type="checkbox" id="privacy">Accept Privacy Conditions
+                              </label>
+
+                              <!-- Button trigger modal -->
+                              <a class="btn btn-default" data-toggle="modal" data-target="#myModal">
+                                  View Condiction
+                              </a>
+                              <!-- Modal -->
+                              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                              <h4 class="modal-title" id="myModalLabel">Privacy Condiction:</h4>
+                                          </div>
+                                          <div class="modal-body">
+                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                          </div>
+                                          <div class="modal-footer">
+                                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                              <button type="button" class="btn btn-primary">Accept</button>
+                                          </div>
+                                      </div>
+                                      <!-- /.modal-content -->
+                                  </div>
+                                  <!-- /.modal-dialog -->
+                              </div>
+                              <!-- /.modal -->
+                          </div>
+                          <!-- .panel-body -->
+
+                          <button type="submit" id="submitBtn" class="btn btn-default" disabled>Submit Button</button>  <!-- disabled attributo di default di html degli input che disabilità il campo -->
+                          <button type="reset" class="btn btn-default">Reset Button</button>
+
+                        </form>
+                    </div>
+                    <!-- /.col-lg-12 -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+
+    <script>
+
+      /*$("#privacy").on("change", function(event){        // prendiamo l'elemtento privacy con il selettore di jquery $ che richiama le librerie di jquery
+        if(this.checked){                                // .on è un metodo e fa il bounding ovvero sta in ascolto di un determinato evento che succede su un determinato tag
+          $("#submitBtn").attr('disabled', null);        // in questo caso è l'evento change sul tag privacy cioè se la spunta nel checkbox privacy è attiva oppure no
+        }else{                                           // se avviene l'evento change esegui la funzione
+          $("#submitBtn").attr('disabled', 'disabled');
+        }
+      });*/
+
+      $("#privacy").on("change", privacyChanged);   //questo codice è per rendere la funzione generica da poter riutilizzare per altri tag
+
+      function privacyChanged(event){
+        toggleSubmit(this.checked);
+      }
+
+      function toggleSubmit(enable) {
+        var submit_btn = $("#submitBtn");
+        if(enable){
+        submit_btn.attr('disabled', null);
+        }else{
+        submit_btn.attr('disabled', 'disabled');
+        }
+      }
+
+      $("form").on('submit', function(e){
+        e.preventDefault();   // previene la spedizione del form previene quello che di default fa il determinato evento
+                              // e nome dela funzione - preventDefault metodo della funzione
+        var fields = [        //dichiarazione del vettore con all'interno stringhe
+          'firstname',
+          'lastname',
+          'email',
+          'message'
+        ];
+
+        var submitable = true;
+
+        for (var i = 0; i < fields.length; i++) {
+          var input_id = fields[i];
+
+          resetErrors(input_id);
+
+          var input_field = $("#"+input_id);
+          var input_value = input_field.val();  //.val prende il valore del campo
+
+          var input_error = !checkRequiredField(input_value);
+
+          if (input_id == 'firstname' || input_id == 'lastname' ) {
+            input_error = !checkOnlyLetter(input_value);
+          }
+
+          if (input_error) {
+            submitable = false;
+            input_field.parent().addClass('has-error');
+          }
+        }
+
+        if(submitable){
+          $("form")[0].submit();    //aggiungere[0] perche jquery crea un array e così controlla cosa succede nel primo elemento dell'array
+        }
+      });
+
+      function resetErrors(id){
+        $("#"+id).parent().removeClass('has-error');
+      }
+
+      function checkRequiredField(input_value){
+        return input_value != '';
+      }
+
+      /*function checkRequiredField(input_field){
+        var input_value = input_field.val();              // la variabile interna alla funzione input_value prende il valore di input_field
+        if(input_value == ''){                            // se il valore è uguale alla stringa vuota
+          input_field.parent().addClass('has-error');     // .parent() va a prendere la classe in cui è contenuto il tag e va aggiungere l'attributo has-error
+          return false;
+        }
+        return true;
+      }*/
+
+      function checkOnlyLetter(str){
+        var re =  /^[A-Za-zÀ-ÿ\s]+$/;
+        return re.test(str);
+      }
+   </script>
+
+</body>
+
+</html>
