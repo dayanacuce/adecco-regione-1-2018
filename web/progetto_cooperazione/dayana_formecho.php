@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--controllo della data+inserimento data+rosso se non scritto+ nuovamente binco se scrivo-->
+<!--controllo della data+inserimento data+rosso se non scritto+ nuovamente binco se scrivo
 <html lang="en">
 
 <head>
@@ -10,21 +10,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Form email</title>
+    <title>Form email</title>-->
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <!-- <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
 
     <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+      <!-- <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">-->
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+      <!-- <link href="../dist/css/sb-admin-2.css" rel="stylesheet">-->
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <!-- <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
 
-    <link href="../css/bootstrap-datepicker.standalone.min.css" rel="stylesheet">
+    <!--<link href="../css/bootstrap-datepicker.standalone.min.css" rel="stylesheet">-->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,21 +32,17 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style>
+    <!--<style>
     .error {color: #FF0000;}
     </style>
 
 </head>
 
-<body>
+<body> -->
 
   <?php
   // define variables and set to empty values
-  $country_nameErr = $project_typeErr = $city_nameErr = $project_managerErr = $comunity_nameErr = $families_numberErr =
-  $reachabilityErr = $floodErr = $flood_gradeErr = $wilderness_gradeErr = $help_kitErr = $infrastructureErr = "";
-
-  $country_name = $project_type = $city_name = $project_manager = $comunity_name = $families_number =
-  $reachability = $flood = $flood_grade = $wilderness_grade = $help_kit = $infrastructure ="";
+  $formError = false;
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

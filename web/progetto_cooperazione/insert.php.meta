@@ -1,6 +1,8 @@
 <?php
-  $seo_description = 'cooperazione';
-  $seo_keywords = 'cooperazione';
-  $html_author = 'Dayana';
-  $page_title = 'Progetto cooperazione';
+
+  $seo_description = 'Country';
+  $seo_keywords = 'Country, flag';
+  $html_author = 'Lockit';
+  $page_title = 'Create Country';
+
 ?>
