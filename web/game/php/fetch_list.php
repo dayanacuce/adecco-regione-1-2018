@@ -6,8 +6,10 @@
   $query =$conn -> prepare("SELECT * FROM publishers");
   $query -> execute();
 
+  $commands = '<td><a href="detail.php?id=:id">dettaglio</a></td>';
+
   $result = $query -> setFetchMode(PDO::FETCH_ASSOC);
-  foreach (new TableRows(new RecursiveArrayIterator($query -> fetchAll(), ' ', )) as $key => $value) {
+  foreach (new TableRows(new RecursiveArrayIterator($query -> fetchAll()), ' ', $commands) as $key => $value) {
     // code...
     echo $value;
   }

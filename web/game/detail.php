@@ -30,6 +30,22 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <?php include("../php_utils/db_utils.php");
+      function getFields($id) {
+        $db_utils = new DbUtils();
+        $conn = $db_utils -> getConnection();
+        $query = $conn -> prepare("SELECT * FROM publishers WHERE id = $id");
+        $query -> execute();
+
+        $result = $query -> fetchAll();
+
+        return $result;
+
+        $conn = null;
+      }
+
+      $show = getFields(1)
+     ?>
 </head>
 
 <body>
@@ -382,16 +398,16 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="alert alert-success">
-                                Name:
+                                <strong>Name: <?php echo $show[0][1] ?></strong>
                             </div>
                             <div class="alert alert-info">
-                                Office:
+                                <strong>Office: <?php echo $show[0][2] ?></strong>
                             </div>
                             <div class="alert alert-warning">
-                                Programmers:
+                                <strong>Programmers: <?php echo $show[0][3] ?></strong>
                             </div>
                             <div class="alert alert-danger">
-                                Foundation date:
+                                <strong>Foundation date: <?php echo $show[0][4] ?></strong>
                             </div>
                         </div>
                         <!-- .panel-body -->
@@ -406,7 +422,6 @@
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
-
     </div>
     <!-- /#wrapper -->
 
