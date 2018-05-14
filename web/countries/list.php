@@ -3,7 +3,7 @@
         <h1 class="page-header">Countries</h1>
         <div class="panel panel-default">
             <div class="panel-heading">
-                list
+                list <a class="btn btn-default" href="?page=countries/insert.php">Insert</a>
             </div>
             <!-- /.panel-heading -->
             <div class="panel-body">

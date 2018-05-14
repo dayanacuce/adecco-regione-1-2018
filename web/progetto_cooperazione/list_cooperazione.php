@@ -24,8 +24,6 @@
                                                           <th>city_name</th>
                                                           <th>project_manager</th>
                                                           <th>comunity_name</th>
-                                                          <th>number_of_families</th>
-                                                          <th>class_transport</th>
                                                           <th>dettaglio</th>
                                                       </tr>
                                                   </thead>
@@ -36,7 +34,7 @@
                                                        $connect = new DbUtils ();
                                                        $conn= $connect -> getConnection();
 
-                                                       $stmt = $conn->prepare("SELECT id, country_code, project_type, city_name, project_manager, comunity_name, number_of_families, class_transport FROM progetto_cooperazione");
+                                                       $stmt = $conn->prepare("SELECT id, country_code, project_type, city_name, project_manager, comunity_name FROM progetto_cooperazione");
                                                        $stmt->execute();
 
                                                        $commands = '<td><a href="/?page=progetto_cooperazione/dettaglio_cooperazione.php&id=:id">dettaglio</a></td>';

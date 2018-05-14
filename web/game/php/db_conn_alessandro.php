@@ -25,7 +25,7 @@
     $stmt->execute();
 
       //detail page and id passthru
-      $commands = '<td><a href="detail_alessandro(external_php).php?id=:id">dettaglio</a></td>';
+      $commands = '<td><a href="/?page=game/game_detail.php&id=:id">dettaglio</a></td>';
 
     // set the resulting array to associative
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -41,7 +41,7 @@
 
     //SQL query
     $stmt = $conn->prepare(
-    "SELECT game.name, developer, publishers.name AS publisher, game_genre.name AS genre, multiplayer, singleplayer, launch_date
+    "SELECT game.name, developer, publishers.name AS publisher, game_genre.name AS genre, multiplayer, singleplayer, launch_date, image
      FROM game
      INNER JOIN game_genre ON game.genre_id = game_genre.id
      INNER JOIN publishers ON game.publisher_id = publishers.id
