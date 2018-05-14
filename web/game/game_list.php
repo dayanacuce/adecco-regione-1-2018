@@ -33,7 +33,7 @@
 
                                   ?>
 
-                                  <a href="game/form_alessandro.php" class="btn btn-default">Go to Google</a>
+                                  <a href="?page=game/game_insert.php" class="btn btn-default">Go to Google</a>
 
                                   </div>
                                 </tbody>

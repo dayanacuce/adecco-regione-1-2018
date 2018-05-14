@@ -2,62 +2,7 @@
     <div class="col-lg-12">
         <h1 class="page-header">Contact form</h1>
           <div width="40%"; min-width="660px"; float:left;>
-              <form id="form" role="form"action="http://adecco.local/adecco/form_alessandro.php" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                <?php
-                  $nameErr = $devErr = $pubErr = $genErr = $dateErr= "";
-                  $name = $developer = $publisher = $genre = $date="";
-
-                  function test_input($data) {
-                  $data = trim($data);
-                  $data = stripslashes($data);
-                  $data = htmlspecialchars($data);
-                  return $data;
-                  }
-
-                  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-                  //Name is required
-                    if (empty($_POST["name"])) {
-                      $nameErr = "Name is required";
-                    }
-                    else {
-                      $name = test_input($_POST["name"]);
-                    }
-
-                  //Developer is required
-                    if (empty($_POST["developer"])) {
-                      $devErr = "Developer is required";
-                    }
-                    else {
-                      $developer = test_input($_POST["developer"]);
-                    }
-
-                  //Publisher is required
-                    if (empty($_POST["publisher"])) {
-                      $pubErr = "Publisher is required";
-                    }
-                    else {
-                      $publisher = test_input($_POST["publisher"]);
-                    }
-
-                  //Genre is required
-                    if (empty($_POST["genre"])) {
-                      $genErr = "Genre is required";
-                    }
-                    else {
-                      $genre = test_input($_POST["genre"]);
-                    }
-
-                  //Date is required
-                    if (empty($_POST["date"])) {
-                      $dateErr = "Date is required";
-                    }
-                    else {
-                      $date = test_input($_POST["date"]);
-                    }
-
-                  }
-                 ?>
+              <form id="form" role="form">
 
                 <div class="form-group <?php if($nameErr != ''){echo 'has-error';} ?>">
                   <label class="control-label" for="name">Nome*</label>
