@@ -1,7 +1,9 @@
 $("#anime").on("change", function(event){       // prendiamo l'elemtento privacy con il selettore di jquery $ che richiama le librerie di jquery
   if(this.checked){                             // .on è un metodo e fa il bounding ovvero sta in ascolto di un determinato evento che succede su un determinato tag
+    $("#anime_vote").slideDown();
     $("#vote").attr('disabled', null);          // in questo caso è l'evento change sul tag privacy cioè se la spunta nel checkbox privacy è attiva oppure no
   }else{                                        // se avviene l'evento change esegui la funzione
+    $("#anime_vote").slideUp();
     $("#vote").attr('disabled', 'disabled');
   }
 });
