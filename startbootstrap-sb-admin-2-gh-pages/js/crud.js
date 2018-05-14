@@ -13,59 +13,59 @@ function toggleSubmit(enable) {
   }
 }
 
-$("form").on("submit", function(e) {
-  e.preventDefault()
-  console.log("Hello from submit");
+// $("form").on("submit", function(e) {
+//   e.preventDefault()
+//   console.log("Hello from submit");
+//   //
+//   // var fields = ["name", "office", "published", "date"]
+//   //
+//    var submittable = true
+//   // for (var i = 0; i < fields.length; i++) {
+//   //   var input = fields[i]
+//   //   resetError(input)
+//   //
+//   //   var field = $("#" + input)
+//   //   var value = field.val()
+//   //   var input_error = !checkField(value)
+//   //
+//   //   if (input == "name" || input == "office") {
+//   //     input_error = !checkOnlyLetter(value)
+//   //   }
+//   //
+//   //   if (input_error) {
+//   //     submittable = false
+//   //     field.parent().addClass("has-error")
+//   //   }
+//   // }
+//
+//   if (submittable) {
+//     $("form")[0].submit()
+//   }
+//
+// })
 
-  var fields = ["name", "office", "published", "date"]
-
-  var submittable = true
-  for (var i = 0; i < fields.length; i++) {
-    var input = fields[i]
-    resetError(input)
-
-    var field = $("#" + input)
-    var value = field.val()
-    var input_error = !checkField(value)
-
-    if (input == "name" || input == "office") {
-      input_error = !checkOnlyLetter(value)
-    }
-
-    if (input_error) {
-      submittable = false
-      field.parent().addClass("has-error")
-    }
-  }
-
-  if (submittable) {
-    $("form")[0].submit()
-  }
-
-})
-
-$("form").on("reset", function(e) {
-  resetField($("#name"))
-  resetField($("#office"))
-  resetField($("#published"))
-})
-
-function resetField(field) {
-  field.value() = ""
-}
-
-function resetError(id) {
-  $("#" + id).parent().removeClass('has-error')
-}
-
-function checkField(input) {
-    return input != ""
-}
-
-function checkOnlyLetter(str) {
-  var re = /^[A-Za-zÀ-ÖØ-öø-žぁ-ゞ0-9\s]+$/
-  return re.test(str)
-}
+// $("form").on("reset", function(e) {
+//   resetField($("#name"))
+//   resetField($("#office"))
+//   resetField($("#published"))
+// })
+//
+// function resetField(field) {
+//   field.value() = ""
+// }
+//
+// function resetError(id) {
+//   $("#" + id).parent().removeClass('has-error')
+// }
+//
+// function checkField(input) {
+//     return input != ""
+// }
+//
+// function checkOnlyLetter(str) {
+//   var re = /^[A-Za-zÀ-ÖØ-öø-žぁ-ゞ0-9\s]+$/
+//   return re.test(str)
+// }
 
 $('#event_period').datepicker({
   inputs: $('.actual_range')

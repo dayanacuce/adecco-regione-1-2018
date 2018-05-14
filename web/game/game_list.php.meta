@@ -1,0 +1,8 @@
+<?php
+
+$seo_description = 'Games';
+$seo_keywords = 'Games, list';
+$html_author = 'Alessandro';
+$page_title = 'Games list';
+
+?>
