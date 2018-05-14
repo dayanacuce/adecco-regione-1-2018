@@ -1,30 +1,41 @@
-$("#anime").on("change", function(event){       // prendiamo l'elemtento privacy con il selettore di jquery $ che richiama le librerie di jquery
-  if(this.checked){                             // .on è un metodo e fa il bounding ovvero sta in ascolto di un determinato evento che succede su un determinato tag
-    $("#vote").attr('disabled', null);          // in questo caso è l'evento change sul tag privacy cioè se la spunta nel checkbox privacy è attiva oppure no
-  }else{                                        // se avviene l'evento change esegui la funzione
-    $("#vote").attr('disabled', 'disabled');
+function animeChecked(event) {
+  if($("#anime")[0].checked){
+    $("#slide_vote").slideDown();
+    $("#slide_date").slideDown();
+    $("#vote_anime").attr('disabled', null);
+    $("#released_date_anime").attr('disabled', null);
+  }else{
+    $("#slide_vote").slideUp();
+    $("#slide_date").slideUp();
+    $("#vote_anime").attr('disabled', 'disabled');
+    $("#released_date_anime").attr('disabled', 'disabled');
   }
-});
+}
+
+animeChecked();
+
+$("#anime").on("change",animeChecked);
 
 $("form").on('submit', function(e){
   e.preventDefault();   // previene la spedizione del form previene quello che di default fa il determinato evento
                         // e nome dela funzione - preventDefault metodo della funzione
-  var fields = [        //dichiarazione del vettore con all'interno stringhe
+
+  var submitable = true;
+
+  /*var fields = [        //dichiarazione del vettore con all'interno stringhe
     'manga',
     'author',
-    'genre',
-    'date',
+    'genre_id',
+    'released_date',
     'frequency',
     'anime'
   ];
-
-  var submitable = true;
 
   for (var i = 0; i < fields.length; i++) {
     var input_id = fields[i];
 
     if(input_id == 'anime' && $("#anime")[0].checked){
-      var input_field = $("#vote");
+      var input_field = $("#vote_anime");
       var input_value = input_field.val();  //.val prende il valore del campo
 
       var input_error = !checkRequiredField(input_value);
@@ -42,7 +53,7 @@ $("form").on('submit', function(e){
 
     var input_error = !checkRequiredField(input_value);
 
-    if (input_id == 'manga' || input_id == 'author' ||  input_id == 'genre') {
+    if (input_id == 'manga' || input_id == 'author') {
       input_error = !checkOnlyLetter(input_value);
     }
 
@@ -53,19 +64,19 @@ $("form").on('submit', function(e){
   }
   /*resetErrors("manga");
   resetErrors("author");
-  resetErrors("date");
+  resetErrors("released_date");
   resetErrors("frequency");
-  resetErrors("vote");
+  resetErrors("vote_anime");
 
   var submitable = true;
 
   submitable = checkRequiredField($("#manga")) && submitable;
   submitable = checkRequiredField($("#author")) && submitable;
-  submitable = checkRequiredField($("#date")) && submitable;
+  submitable = checkRequiredField($("#released_date")) && submitable;
   submitable = checkRequiredField($("#frequency")) && submitable;
 
   if ($("#anime")[0].checked) {
-    submitable = checkRequiredField($("#vote")) && submitable;
+    submitable = checkRequiredField($("#vote_anime")) && submitable;
   }*/
 
   if(submitable){
