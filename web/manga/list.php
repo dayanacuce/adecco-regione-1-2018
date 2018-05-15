@@ -5,7 +5,8 @@
       <div class="col-lg-12">
         <div class="panel panel-default">
           <div class="panel-heading">
-              List
+              <a class="btn btn-default pull-right" href="?page=manga/insert.php">Insert New Record</a>
+              <h5>List</h5>
           </div>
           <!-- /.panel-heading -->
           <div class="panel-body">

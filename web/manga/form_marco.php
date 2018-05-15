@@ -18,18 +18,28 @@
       <div class="form-group <?php if($genre_idErr != '') echo 'has-error'; ?>">
         <label class="control-label" for="genre_id">Genre: *</label>
         <select name="genre_id" class="form-control" id="genre_id" value="<?php echo $genre_id;?>">
-          <option value=""  <?php if(isset($_POST['genre_id']) && $_POST['genre_id'] == '')  echo 'selected="selected"' ?> >Selezionare: - - -</option>
-          <option value="1" <?php if(isset($_POST['genre_id']) && $_POST['genre_id'] == '1') echo 'selected="selected"' ?> >Arti Marziali</option>
-          <option value="2" <?php if(isset($_POST['genre_id']) && $_POST['genre_id'] == '2') echo 'selected="selected"' ?> >Avventura</option>
-          <option value="3" <?php if(isset($_POST['genre_id']) && $_POST['genre_id'] == '3') echo 'selected="selected"' ?> >Azione</option>
+          <option value=""  <?php if(isset($_POST['genre_id']) && $_POST['genre_id'] == '')  echo "selected" ?> >Selezionare: - - -</option>
+          <?php $db = new DbUtils();
+          $conn = $db -> getConnection();
+          $query = $conn->prepare("SELECT id, genre
+                                  FROM manga_genres");
+          $query->execute();
+
+          $result = $query->setFetchMode(PDO::FETCH_ASSOC);
+          foreach ($query->fetchAll() as $k=>$lista) {
+            echo "<option value=".$lista['id'].">".$lista ['genre']."</option>";
+          }
+          ?>
         </select>
+        <?php //echo "<option value=".$lista ['id']."";if(isset($_POST['genre_id']) && $_POST["genre_id"] == ".$lista ['id']."){echo selected;}echo ">".$lista ['genre']."</option>"; ?>
+        <?php //echo var_dump($lista) ?>
         <p class="help-block"> <?php echo $genre_idErr;?></p>
       </div>
 
       <div class="form-group <?php if($released_dateErr != '') echo 'has-error'; ?>">
         <label class="control-label" for="released_date">Released Date: *</label>
-        <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-end-date="0d">
-          <input type="text" class="form-control" name="released_date" id="released_date" placeholder="DD/MM/YYYY" value="<?php echo $released_date;?>">
+        <div class="input-group date" data-provide="datepicker" data-date-format="yyyy/mm/dd" data-date-end-date="0d">
+          <input type="text" class="form-control" name="released_date" id="released_date" placeholder="YYYY/MM/DD" value="<?php echo $released_date;?>">
             <div class="input-group-addon">
               <span class="glyphicon glyphicon-th"></span>
             </div>
@@ -81,8 +91,8 @@
 
       <div class="form-group <?php if($released_date_animeErr != '') echo 'has-error'; ?>" id="slide_date" style="display: none;">
         <label class="control-label" for="released_date_anime">Released Date Anime: *</label>
-        <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-end-date="0d">
-          <input type="text" class="form-control" name="released_date_anime" id="released_date_anime" placeholder="DD/MM/YYYY" disabled value="<?php echo $released_date_anime;?>">
+        <div class="input-group date" data-provide="datepicker" data-date-format="yyyy/mm/dd" data-date-end-date="0d">
+          <input type="text" class="form-control" name="released_date_anime" id="released_date_anime" placeholder="YYYY/MM/DD" disabled value="<?php echo $released_date_anime;?>">
             <div class="input-group-addon">
               <span class="glyphicon glyphicon-th"></span>
             </div>

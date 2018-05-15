@@ -30,10 +30,13 @@ class DbUtils{
   function DbUtils(){}
 
   function getConnection(){
-    $servername = "adecco.local";
+    //$servername = "adecco.local";
+    $servername = "localhost";
     $username = "root";
-    $password = "password";
-    $dbname = "adecco-1-2018";
+    //$password = "password";
+    $password = "";
+    //$dbname = "adecco-1-2018";
+    $dbname = "marco";
 
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
