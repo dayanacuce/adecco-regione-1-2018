@@ -60,7 +60,7 @@ if (empty($_POST["cover"])) {
 }
 
 if (empty($_POST["anime"])) {
-  $_POST["anime"] = NULL;
+  $anime = NULL;
   $_POST["vote_anime"] = NULL;
   $_POST["released_date_anime"] = NULL;
 } else {
