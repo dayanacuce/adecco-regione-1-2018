@@ -1,4 +1,4 @@
-nclude 'php_utils/db_utils.php';
+include 'php_utils/db_utils.php';
 
 $db_utils = new DbUtils();
 $conn = $db_utils->getConnection();
