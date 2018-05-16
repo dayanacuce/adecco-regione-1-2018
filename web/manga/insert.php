@@ -7,6 +7,18 @@ $conn = $db -> getConnection();
 $mangaErr = $authorErr = $genre_idErr = $released_dateErr = $frequencyErr = $vote_animeErr = $released_date_animeErr = $coverErr = "";
 $manga = $author = $genre_id = $released_date = $frequency = $anime = $vote_anime = $released_date_anime = $cover = "";
 
+$manga_update = array(
+  'manga'=>'',
+  'author'=>'',
+  'genre_id'=>'',
+  'released_date'=>'',
+  'frequency'=>'',
+  'cover'=>'',
+  'anime'=>'',
+  'vote_anime'=>'',
+  'released_date_anime'=>''
+);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   $stmt = $conn->prepare("INSERT INTO manga (manga, author, genre_id, released_date, frequency, cover, anime, vote_anime, released_date_anime)
@@ -37,10 +49,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   if(!$formError){
-    $stmt->execute();
-    echo "<h1>Form Submited Successfully</h1>";
+    if($stmt->execute()){
+      $inserted = true;
+    }
   }
 }
 
-include 'form_marco.php';
+if($inserted){
+  ?>
+  <h1>Form Submited Successfully</h1> <a href="/?page=manga/list.php"> Clicca qui per tornare alla lista </a>
+  <script>
+    setTimeout(goBack, 5000);
+    function goBack(){
+      window.location = '/?page=manga/list.php';
+    }
+  </script>
+  <?php
+}else{
+  include 'form_marco.php';
+}
+
 ?>

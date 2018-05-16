@@ -2,7 +2,7 @@
   <div class="col-lg-12">
     <h1 class="page-header">Manga & Anime</h1>
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-8">
         <div class="panel panel-default">
           <div class="panel-heading">
               <a class="btn btn-default pull-right" href="?page=manga/insert.php">Insert New Record</a>
