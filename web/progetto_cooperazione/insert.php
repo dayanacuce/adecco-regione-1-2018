@@ -1,5 +1,4 @@
 <?php
-
 include 'php_utils/db_utils.php';
 
 $db_utils = new DbUtils();
