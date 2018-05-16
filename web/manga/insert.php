@@ -36,12 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':released_date_anime', $released_date_anime);
   }
 
-  include 'form_marco.php';
-
   if(!$formError){
     $stmt->execute();
     echo "<h1>Form Submited Successfully</h1>";
   }
 }
 
+include 'form_marco.php';
 ?>
