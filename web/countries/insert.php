@@ -5,10 +5,18 @@ include 'php_utils/db_utils.php';
 $db_utils = new DbUtils();
 $conn = $db_utils->getConnection();
 
+$inserted = false;
 // define variables and set to empty values
 $alpha2CodeErr = $nameErr = $capitalErr = $populationErr = $flagErr = "";
 
 $alpha2Code = $name = $capital = $population = $flag = '';
+$country = array(
+  'alpha2Code'=>'',
+  'name'=>'',
+  'capital'=>'',
+  'population'=>'',
+  'flag'=>''
+);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -24,12 +32,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   include('form_controls.php');
 
   if(!$formError){
-    $stmt->execute();
+    if($stmt->execute()){
+      $inserted = true;
+    }
   }
 
 }
 
-
-include 'form.php';
+if($inserted){
+  ?>
+  <p>
+    Elemento inserito con successo <a href="/?page=countries/list.php"> Clicca qui per tornare alla lista </a>
+  </p>
+  <script>
+    setTimeout(goBack, 5000);
+    function goBack(){
+      window.location = '/?page=countries/list.php';
+    }
+  </script>
+  <?php
+}else{
+  include 'form.php';
+}
 
  ?>

@@ -1,5 +1,7 @@
 <?php
 
+include 'config.php';
+
 class TableRows extends RecursiveIteratorIterator {
     function __construct($it, $begin='', $end='', $id_key='id') {
         parent::__construct($it, self::LEAVES_ONLY);
@@ -30,10 +32,7 @@ class DbUtils{
   function DbUtils(){}
 
   function getConnection(){
-    $servername = "adecco.local";
-    $username = "root";
-    $password = "password";    
-    $dbname = "adecco-1-2018";
+    global $servername, $username, $password, $dbname;
 
 
     try {
