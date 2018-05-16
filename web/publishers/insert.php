@@ -23,9 +23,7 @@
     if(!$formError){
       $stmt->execute();
     }
-
   }
-
-
+  
   include 'patrick_form.php';
  ?>
