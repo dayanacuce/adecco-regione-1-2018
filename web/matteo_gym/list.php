@@ -15,49 +15,34 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>First Name</th>
+            <th>Firstname</th>
             <th>Last Name</th>
-            <th>Username</th>
+            <th>sex</th>
+            <th>stage</th>
+            <th>ranking</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
+      <?php
+      include 'php_utils/db_utils.php';
+
+      $db_utils = new DbUtils();
+      $conn = $db_utils->getConnection();
+          $stmt = $conn->prepare("SELECT id, firstname, lastname, sex, stage, ranking FROM Gyms");
+          $stmt->execute();
+
+          // set the resulting array to associative
+          $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+          foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
+              echo $v;
+          }
+        ?>
+
+
     </tbody>
 </table>
 
-<?php
-include 'php_utils/db_utils.php';
 
-$db_utils = new DbUtils();
-$conn = $db_utils->getConnection();
-    $stmt = $conn->prepare("SELECT id, firstname, lastname FROM Gyms");
-    $stmt->execute();
-
-    // set the resulting array to associative
-    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) {
-        echo $v;
-    }
-
-echo "</table>";
-?>
 
 </div>
 <!-- /.table-responsive -->
