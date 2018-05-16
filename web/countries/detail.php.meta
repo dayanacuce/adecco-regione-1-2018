@@ -1,7 +1,7 @@
 <?php
 
 $seo_description = 'Country';
-$seo_keywords = 'Country, flags';
+$seo_keywords = 'Country, flag';
 $html_author = 'Lockit';
 $page_title = 'Country detail';
 
