@@ -16,12 +16,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // prepare sql and bind parameters
   $stmt = $conn->prepare("INSERT INTO countries ( name, project_type, city_name, project_manager, comunity_name, families_number,reachability, flood, flood_grade, wilderness_grade,help_kit, infrastructure )
-  VALUES (:name, :project_type, :city_name, :project_manager, :comunity_name, :families_number,reachability, :flood, :flood_grade, :wilderness_grade, :help_kit, :infrastructure)");
+  VALUES (:name, :project_type, :city_name, :project_manager, :comunity_name, :families_number, :reachability, :flood, :flood_grade, :wilderness_grade, :help_kit, :infrastructure)");
   $stmt->bindParam(':name', $name);
   $stmt->bindParam(':project_type', $project_type);
   $stmt->bindParam(':city_name', $city_name);
   $stmt->bindParam(':project_manager', $project_manager);
   $stmt->bindParam(':comunity_name', $comunity_name);
+  $stmt->bindParam(':families_number', $families_number);
+  $stmt->bindParam(':reachability', $reachability);
+  $stmt->bindParam(':flood', $flood);
+  $stmt->bindParam(':flood_grade', $flood_grade);
+  $stmt->bindParam(':wilderness_grade', $wilderness_grade);
+  $stmt->bindParam(':help_kit', $help_kit);
+  $stmt->bindParam(':infrastructur', $infrastructur);
 
   include('form_controls.php');
 
