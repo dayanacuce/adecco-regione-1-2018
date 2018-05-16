@@ -8,10 +8,23 @@
 
                 <div class="form-group">
                   <label class="control-label" for="alpha2Code">Alpha Country Code</label>
-                      <input class="form-control" type="text"
-                             name="alpha2Code" id="alpha2Code"
-                            value="<?php echo $alpha2Code;?>">
-                  <span class="error">* <?php echo $alpha2CodeErr;?></span>
+                    <?php
+                      if(isset($id)){
+                        echo $id;
+                        ?>
+                        <input type="hidden"
+                               name="alpha2Code"
+                              value="<?php echo $id;?>">
+                        <?php
+                      }else{
+                        ?>
+                        <input class="form-control" type="text"
+                               name="alpha2Code" id="alpha2Code"
+                              value="<?php echo $alpha2Code;?>">
+                    <span class="error">* <?php echo $alpha2CodeErr;?></span>
+                        <?php
+                      }
+                      ?>
                 </div>
 
 
@@ -20,7 +33,7 @@
                   <label class="control-label" for="name">Nome</label>
                       <input class="form-control" type="text"
                              name="name" id="name"
-                             value="<?php echo $name;?>">
+                             value="<?php echo $name != '' ? $name : $country['name']; ?>">
                     <span class="error">* <?php echo $nameErr;?></span>
                 </div>
 
@@ -31,7 +44,7 @@
                   <label class="control-label" for="capital">Capitale</label>
                       <input class="form-control" type="text"
                              name="capital" id="capital"
-                             value="<?php echo $capital;?>">
+                             value="<?php echo $capital != '' ? $capital : $country['capital']; ?>">
                   <span class="error">* <?php echo $capitalErr;?></span>
                 </div>
 
@@ -41,7 +54,7 @@
                   <label class="control-label" for="population">Popolazione</label>
                       <input class="form-control" type="text"
                              name="population" id="population"
-                             value="<?php echo $population;?>">
+                             value="<?php echo $population != '' ? $population : $country['population'];?>">
                   <span class="error">* <?php echo $populationErr;?></span>
                 </div>
 
@@ -49,7 +62,7 @@
                   <label class="control-label" for="flag">Url Bandiera</label>
                       <input class="form-control" type="text"
                              name="flag" id="flag"
-                             value="<?php echo $flag;?>">
+                             value="<?php echo $flag != '' ? $flag : $country['flag'];?>">
                   <span class="error">* <?php echo $flagErr;?></span>
                 </div>
 
