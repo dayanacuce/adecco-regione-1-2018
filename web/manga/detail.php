@@ -89,7 +89,11 @@
             <strong>Anime: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
-            <?php echo $manga ['anime'] ?>
+            <?php if ($manga ['anime'] == "")
+                echo "none..";
+                else {
+                echo $manga ['anime'];
+                }?>
           </div>
         </div>
       </div>
@@ -103,7 +107,11 @@
             <strong>Vote: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
-            <?php echo $manga ['vote_anime'] ?>
+            <?php if ($manga ['vote_anime'] == "")
+                echo "none..";
+                else {
+                echo $manga ['vote_anime'];
+                } ?>
           </div>
         </div>
       </div>
@@ -117,7 +125,11 @@
             <strong>Released Date Anime: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
-            <?php echo $manga ['released_date_anime'] ?>
+            <?php if ($manga ['released_date_anime'] == "")
+                echo "none..";
+                else {
+                echo $manga ['released_date_anime'];
+                } ?>
           </div>
         </div>
       </div>
