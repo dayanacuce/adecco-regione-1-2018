@@ -2,7 +2,7 @@
   <div class="col-lg-12">
     <h1 class="page-header">Manga & Anime</h1>
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-6">
         <div class="panel panel-default">
           <div class="panel-heading">
               <a class="btn btn-default pull-right" href="?page=manga/insert.php">Insert New Record</a>
@@ -19,7 +19,7 @@
                       <th>Author</th>
                       <th>Genre</th>
                       <th>Released Date</th>
-                      <th>Detail</th>
+                      <th>Commands</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -31,7 +31,9 @@
                                             INNER JOIN manga_genres ON manga.genre_id = manga_genres.id");
                     $stmt->execute(); //richiamo il metodo execute che esegue la query
 
-                    $commands = '<td><a href="/?page=manga/detail.php&id=:id">detail</a></td>';
+                    $commands = '<td><a href="/?page=manga/detail.php&id=:id">detail</a> - ';
+                    $commands .= '<a href="/?page=manga/update.php&id=:id">edit</a> - ';
+                    $commands .= '<a href="/manga/delete.php?id=:id">delete</a></td>';
 
                     // set the resulting array to associative
                     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); //fetch assoc associa i nomi dei campi ai dati che estrae

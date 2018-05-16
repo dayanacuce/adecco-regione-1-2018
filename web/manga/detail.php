@@ -10,7 +10,7 @@
 
       // set the resulting array to associative
       $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-      $manga = $stmt->fetch();  //fetch restituisce un record compresi di tutti i campi
+      $manga_detail = $stmt->fetch();  //fetch restituisce un record compresi di tutti i campi
 ?>
 <div class="row">
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -22,8 +22,8 @@
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="panel panel-default">
       <div class="panel-body text-center">
-        <h1><?php echo $manga ['manga'] ?>
-            <small>by <?php echo $manga ['author'] ?></small>
+        <h1><?php echo $manga_detail ['manga'] ?>
+            <small>by <?php echo $manga_detail ['author'] ?></small>
         </h1>
       </div>
     </div>
@@ -34,7 +34,7 @@
   <div class="col-lg-4 col-md-5">
     <div class="panel panel-default">
       <div class="panel-body">
-        <img src="<?php echo $manga ['cover'] ?>"
+        <img src="<?php echo $manga_detail ['cover'] ?>"
           alt="Copertina Manga" style="max-width: 100%;height: auto;"/>
       </div>
     </div>
@@ -47,7 +47,7 @@
             <strong>Genre: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
-            <?php echo $manga ['genre'] ?>
+            <?php echo $manga_detail ['genre'] ?>
           </div>
         </div>
       </div>
@@ -61,7 +61,7 @@
             <strong>Released Date: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
-            <?php echo $manga ['released_date'] ?>
+            <?php echo $manga_detail ['released_date'] ?>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@
             <strong>Frequency: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
-            <?php echo $manga ['frequency'] ?>
+            <?php echo $manga_detail ['frequency'] ?>
           </div>
         </div>
       </div>
@@ -89,10 +89,10 @@
             <strong>Anime: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
-            <?php if ($manga ['anime'] == "")
+            <?php if ($manga_detail ['anime'] == "")
                 echo "none..";
                 else {
-                echo $manga ['anime'];
+                echo $manga_detail ['anime'];
                 }?>
           </div>
         </div>
@@ -107,10 +107,10 @@
             <strong>Vote: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
-            <?php if ($manga ['vote_anime'] == "")
+            <?php if ($manga_detail ['vote_anime'] == "")
                 echo "none..";
                 else {
-                echo $manga ['vote_anime'];
+                echo $manga_detail ['vote_anime'];
                 } ?>
           </div>
         </div>
@@ -125,10 +125,10 @@
             <strong>Released Date Anime: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center" style="padding-left:0px; padding-right:0px;">
-            <?php if ($manga ['released_date_anime'] == "")
+            <?php if ($manga_detail ['released_date_anime'] == "")
                 echo "none..";
                 else {
-                echo $manga ['released_date_anime'];
+                echo $manga_detail ['released_date_anime'];
                 } ?>
           </div>
         </div>
