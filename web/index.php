@@ -21,7 +21,6 @@
   </head>
 
   <body>
-
         <div id="wrapper">
             <?php include 'partials/navigation.php' ?>
 
@@ -31,7 +30,7 @@
                   <?php
                   	if (!empty($page)) {
                   		include($page);
-                  	}else{
+                  	} else{
                       echo '<- scegli una pagina';
                     }
                   ?>
@@ -39,7 +38,6 @@
                 <!-- /.container-fluid -->
             </div>
             <!-- /#page-wrapper -->
-
         </div>
         <!-- /#wrapper -->
   <?php

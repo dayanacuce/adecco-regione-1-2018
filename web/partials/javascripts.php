@@ -13,3 +13,6 @@
     <script src="../dist/js/sb-admin-2.js"></script>
 
     <script src="../js/contact_form.js"></script>
+    
+    <!-- Controlli JavaScript -->
+    <script src="../js/marco_form_anime_manga.js"></script>

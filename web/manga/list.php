@@ -2,10 +2,11 @@
   <div class="col-lg-12">
     <h1 class="page-header">Manga & Anime</h1>
     <div class="row">
-      <div class="col-lg-12">
+      <div class="col-lg-8">
         <div class="panel panel-default">
           <div class="panel-heading">
-              List
+              <a class="btn btn-default pull-right" href="?page=manga/insert.php">Insert New Record</a>
+              <h5>List</h5>
           </div>
           <!-- /.panel-heading -->
           <div class="panel-body">
@@ -17,20 +18,22 @@
                       <th>Manga</th>
                       <th>Author</th>
                       <th>Genre</th>
-                      <th>Anime</th>
-                      <th>Detail</th>
+                      <th>Released Date</th>
+                      <th>Commands</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php include 'php_utils/db_utils.php';
                     $db = new DbUtils();  //
                     $conn = $db -> getConnection();
-                    $stmt = $conn->prepare("SELECT manga.id, manga, author, manga_genres.genre, anime
+                    $stmt = $conn->prepare("SELECT manga.id, manga, author, manga_genres.genre, released_date
                                             FROM manga
                                             INNER JOIN manga_genres ON manga.genre_id = manga_genres.id");
                     $stmt->execute(); //richiamo il metodo execute che esegue la query
 
-                    $commands = '<td><a href="/?page=manga/detail.php&id=:id">detail</a></td>';
+                    $commands = '<td><a href="/?page=manga/detail.php&id=:id">detail</a> - ';
+                    $commands .= '<a href="/?page=manga/update.php&id=:id">edit</a> - ';
+                    $commands .= '<a href="/manga/delete.php?id=:id">delete</a></td>';
 
                     // set the resulting array to associative
                     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); //fetch assoc associa i nomi dei campi ai dati che estrae
