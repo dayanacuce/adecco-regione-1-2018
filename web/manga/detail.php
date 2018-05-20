@@ -31,19 +31,19 @@
 </div>
 
 <div class="row">
-  <div class="col-lg-4 col-md-5">
+  <div class="col-lg-5 col-md-6">
     <div class="panel panel-default">
       <div class="panel-body">
         <img src="<?php echo $manga_detail ['cover'] ?>"
-          alt="Copertina Manga" style="max-width: 100%;height: auto;"/>
+          alt="Copertina Manga" style="max-width: 100%;height: auto;">
       </div>
     </div>
   </div>
-  <div class="col-lg-8 col-md-7">
+  <div class="col-lg-7 col-md-6">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px;">
-          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">
             <strong>Genre: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
@@ -53,11 +53,11 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-8 col-md-7">
+  <div class="col-lg-7 col-md-6">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px;">
-          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">
             <strong>Released Date: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
@@ -67,11 +67,11 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-8 col-md-7">
+  <div class="col-lg-7 col-md-6">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px;">
-          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">
             <strong>Frequency: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
@@ -81,11 +81,11 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-8 col-md-7">
+  <div class="col-lg-7 col-md-6">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px;">
-          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">
             <strong>Anime: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
@@ -99,11 +99,11 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-8 col-md-7">
+  <div class="col-lg-7 col-md-6">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px">
-          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">
             <strong>Vote: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
@@ -117,11 +117,11 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-8 col-md-7">
+  <div class="col-lg-7 col-md-6">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:0px;">
-          <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">
             <strong>Released Date Anime: </strong>
           </div>
           <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 text-center">
@@ -135,11 +135,12 @@
       </div>
     </div>
   </div>
-  <div class="col-lg-8 col-md-7">
+  <div class="col-lg-7 col-md-6">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <a class="btn btn-outline btn-default btn-block" href="?page=manga/list.php">Go Back</a>
+          <a href="?page=manga/list.php" class="btn btn-outline btn-default btn-block">
+          <span class="fas fa-arrow-circle-left fa-fw"></span> Back</a>
         </div>
       </div>
     </div>
