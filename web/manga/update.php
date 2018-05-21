@@ -74,9 +74,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if($updated){
   ?>
-  <p>
-    Elemento modificato con successo <a href="/?page=manga/list.php"> Clicca qui per tornare alla lista </a>
-  </p>
+  <h1>Data Update Successfully</h1>
+  <br>
+  <a href="/?page=manga/list.php"><span class="fa fa-arrow-circle-left"></span> Click here to go back to list</a>
   <script>
     setTimeout(goBack, 5000);
     function goBack(){

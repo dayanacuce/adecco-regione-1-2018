@@ -104,9 +104,12 @@
 
       <br>
 
-      <button type="submit" id="submitBtn" class="btn btn-default">Submit Button</button>
-      <button type="reset" class="btn btn-default">Reset Button</button>
+      <button type="submit" id="submitBtn" class="btn btn-outline btn-default"><span class="fas fa-check-circle fa-fw"></span> Submit</button>
+      <button type="reset" class="btn btn-outline btn-default"><span class="fas fa-eraser fa-fw"></span> Reset</button>
+      <a href="?page=manga/list.php" class="btn btn-outline btn-default">
+      <span class="fas fa-arrow-circle-left fa-fw"></span> Back</a>
 
+      <br>
     </form>
   </div>
   <!-- /.col-lg-6 -->

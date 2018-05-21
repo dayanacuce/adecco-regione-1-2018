@@ -3,6 +3,8 @@
 $db = new DbUtils();
 $conn = $db -> getConnection();
 
+$inserted = false;
+
 // define variables and set to empty values
 $mangaErr = $authorErr = $genre_idErr = $released_dateErr = $frequencyErr = $vote_animeErr = $released_date_animeErr = $coverErr = "";
 $manga = $author = $genre_id = $released_date = $frequency = $anime = $vote_anime = $released_date_anime = $cover = "";
@@ -57,7 +59,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if($inserted){
   ?>
-  <h1>Form Submited Successfully</h1> <a href="/?page=manga/list.php"> Clicca qui per tornare alla lista </a>
+  <h1>Form Submited Successfully</h1>
+  <br>
+  <a href="/?page=manga/list.php"><span class="fa fa-arrow-circle-left"></span> Click here to go back to list</a>
   <script>
     setTimeout(goBack, 5000);
     function goBack(){
